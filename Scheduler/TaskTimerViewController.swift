@@ -82,7 +82,7 @@ class TaskTimerViewController: UIViewController {
         } else {
             print("done with everything")
             taskTimer.stop()
-            self.performSegueWithIdentifier("done", sender: sender)
+            self.navigationController!.performSegueWithIdentifier("done", sender: sender)
         }
     }
     
