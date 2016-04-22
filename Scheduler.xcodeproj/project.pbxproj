@@ -1,0 +1,550 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		260C058F1C971F5B00E13098 /* GenerateScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260C058E1C971F5B00E13098 /* GenerateScheduleViewController.swift */; };
+		261524151C6E9BA100B81A3A /* PrioritySystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261524141C6E9BA100B81A3A /* PrioritySystem.swift */; };
+		26419C3D1C62870600E51BC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26419C3C1C62870600E51BC4 /* AppDelegate.swift */; };
+		26419C3F1C62870600E51BC4 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26419C3E1C62870600E51BC4 /* StartViewController.swift */; };
+		26419C441C62870600E51BC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26419C431C62870600E51BC4 /* Assets.xcassets */; };
+		26419C471C62870600E51BC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26419C451C62870600E51BC4 /* LaunchScreen.storyboard */; };
+		26419C521C62870600E51BC4 /* SchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26419C511C62870600E51BC4 /* SchedulerTests.swift */; };
+		26419C5D1C62870600E51BC4 /* SchedulerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26419C5C1C62870600E51BC4 /* SchedulerUITests.swift */; };
+		264DD0EC1CA3058B003ABA6C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264DD0EB1CA3058B003ABA6C /* Settings.swift */; };
+		2675A0261C987AC60092DB79 /* GeneratedScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675A0251C987AC60092DB79 /* GeneratedScheduleTableViewController.swift */; };
+		268947C81C987C7A00C30A3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 268947C71C987C7A00C30A3B /* Main.storyboard */; };
+		26A1413E1CC19255001AF412 /* TaskTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1413D1CC19255001AF412 /* TaskTimerViewController.swift */; };
+		26A6EB7E1CC6A43800975907 /* DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A6EB7D1CC6A43800975907 /* DoneViewController.swift */; };
+		26D6541F1C9A669D0069CF3D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D6541E1C9A669D0069CF3D /* SettingsViewController.swift */; };
+		26E87C921C9CB00500902F01 /* TaskTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E87C911C9CB00500902F01 /* TaskTimer.swift */; };
+		26EF73CF1C84B52500A8E304 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF73CE1C84B52500A8E304 /* Task.swift */; };
+		26EF73D11C86123300A8E304 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF73D01C86123300A8E304 /* TaskTableViewCell.swift */; };
+		26EF73D31C86148700A8E304 /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF73D21C86148700A8E304 /* TaskTableViewController.swift */; };
+		26FDA1671C8A426000503AB1 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDA1661C8A426000503AB1 /* NewTaskViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		26419C4E1C62870600E51BC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26419C311C62870600E51BC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26419C381C62870600E51BC4;
+			remoteInfo = Scheduler;
+		};
+		26419C591C62870600E51BC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26419C311C62870600E51BC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26419C381C62870600E51BC4;
+			remoteInfo = Scheduler;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		260C058E1C971F5B00E13098 /* GenerateScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateScheduleViewController.swift; sourceTree = "<group>"; };
+		261524141C6E9BA100B81A3A /* PrioritySystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrioritySystem.swift; sourceTree = "<group>"; };
+		26419C391C62870600E51BC4 /* Scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		26419C3C1C62870600E51BC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		26419C3E1C62870600E51BC4 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		26419C431C62870600E51BC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		26419C461C62870600E51BC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		26419C481C62870600E51BC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26419C4D1C62870600E51BC4 /* SchedulerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SchedulerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		26419C511C62870600E51BC4 /* SchedulerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerTests.swift; sourceTree = "<group>"; };
+		26419C531C62870600E51BC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26419C581C62870600E51BC4 /* SchedulerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SchedulerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		26419C5C1C62870600E51BC4 /* SchedulerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerUITests.swift; sourceTree = "<group>"; };
+		26419C5E1C62870600E51BC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		264DD0EB1CA3058B003ABA6C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		2675A0251C987AC60092DB79 /* GeneratedScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedScheduleTableViewController.swift; sourceTree = "<group>"; };
+		268947C71C987C7A00C30A3B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		26A1413D1CC19255001AF412 /* TaskTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTimerViewController.swift; sourceTree = "<group>"; };
+		26A6EB7D1CC6A43800975907 /* DoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneViewController.swift; sourceTree = "<group>"; };
+		26D6541E1C9A669D0069CF3D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		26E87C911C9CB00500902F01 /* TaskTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTimer.swift; sourceTree = "<group>"; };
+		26EF73CE1C84B52500A8E304 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		26EF73D01C86123300A8E304 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		26EF73D21C86148700A8E304 /* TaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
+		26FDA1661C8A426000503AB1 /* NewTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26419C361C62870600E51BC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26419C4A1C62870600E51BC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26419C551C62870600E51BC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26419C301C62870600E51BC4 = {
+			isa = PBXGroup;
+			children = (
+				26419C3B1C62870600E51BC4 /* Scheduler */,
+				26419C501C62870600E51BC4 /* SchedulerTests */,
+				26419C5B1C62870600E51BC4 /* SchedulerUITests */,
+				26419C3A1C62870600E51BC4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		26419C3A1C62870600E51BC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26419C391C62870600E51BC4 /* Scheduler.app */,
+				26419C4D1C62870600E51BC4 /* SchedulerTests.xctest */,
+				26419C581C62870600E51BC4 /* SchedulerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26419C3B1C62870600E51BC4 /* Scheduler */ = {
+			isa = PBXGroup;
+			children = (
+				26FDA1661C8A426000503AB1 /* NewTaskViewController.swift */,
+				26EF73D21C86148700A8E304 /* TaskTableViewController.swift */,
+				26EF73D01C86123300A8E304 /* TaskTableViewCell.swift */,
+				26EF73CE1C84B52500A8E304 /* Task.swift */,
+				26E87C911C9CB00500902F01 /* TaskTimer.swift */,
+				26A1413D1CC19255001AF412 /* TaskTimerViewController.swift */,
+				26A6EB7D1CC6A43800975907 /* DoneViewController.swift */,
+				261524141C6E9BA100B81A3A /* PrioritySystem.swift */,
+				2675A0251C987AC60092DB79 /* GeneratedScheduleTableViewController.swift */,
+				260C058E1C971F5B00E13098 /* GenerateScheduleViewController.swift */,
+				26419C3E1C62870600E51BC4 /* StartViewController.swift */,
+				26D6541E1C9A669D0069CF3D /* SettingsViewController.swift */,
+				264DD0EB1CA3058B003ABA6C /* Settings.swift */,
+				26419C3C1C62870600E51BC4 /* AppDelegate.swift */,
+				26419C451C62870600E51BC4 /* LaunchScreen.storyboard */,
+				268947C71C987C7A00C30A3B /* Main.storyboard */,
+				26419C431C62870600E51BC4 /* Assets.xcassets */,
+				26419C481C62870600E51BC4 /* Info.plist */,
+			);
+			path = Scheduler;
+			sourceTree = "<group>";
+		};
+		26419C501C62870600E51BC4 /* SchedulerTests */ = {
+			isa = PBXGroup;
+			children = (
+				26419C511C62870600E51BC4 /* SchedulerTests.swift */,
+				26419C531C62870600E51BC4 /* Info.plist */,
+			);
+			path = SchedulerTests;
+			sourceTree = "<group>";
+		};
+		26419C5B1C62870600E51BC4 /* SchedulerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				26419C5C1C62870600E51BC4 /* SchedulerUITests.swift */,
+				26419C5E1C62870600E51BC4 /* Info.plist */,
+			);
+			path = SchedulerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		26419C381C62870600E51BC4 /* Scheduler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26419C611C62870600E51BC4 /* Build configuration list for PBXNativeTarget "Scheduler" */;
+			buildPhases = (
+				26419C351C62870600E51BC4 /* Sources */,
+				26419C361C62870600E51BC4 /* Frameworks */,
+				26419C371C62870600E51BC4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Scheduler;
+			productName = Scheduler;
+			productReference = 26419C391C62870600E51BC4 /* Scheduler.app */;
+			productType = "com.apple.product-type.application";
+		};
+		26419C4C1C62870600E51BC4 /* SchedulerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26419C641C62870600E51BC4 /* Build configuration list for PBXNativeTarget "SchedulerTests" */;
+			buildPhases = (
+				26419C491C62870600E51BC4 /* Sources */,
+				26419C4A1C62870600E51BC4 /* Frameworks */,
+				26419C4B1C62870600E51BC4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26419C4F1C62870600E51BC4 /* PBXTargetDependency */,
+			);
+			name = SchedulerTests;
+			productName = SchedulerTests;
+			productReference = 26419C4D1C62870600E51BC4 /* SchedulerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		26419C571C62870600E51BC4 /* SchedulerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26419C671C62870600E51BC4 /* Build configuration list for PBXNativeTarget "SchedulerUITests" */;
+			buildPhases = (
+				26419C541C62870600E51BC4 /* Sources */,
+				26419C551C62870600E51BC4 /* Frameworks */,
+				26419C561C62870600E51BC4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26419C5A1C62870600E51BC4 /* PBXTargetDependency */,
+			);
+			name = SchedulerUITests;
+			productName = SchedulerUITests;
+			productReference = 26419C581C62870600E51BC4 /* SchedulerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26419C311C62870600E51BC4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Omnicon Industries";
+				TargetAttributes = {
+					26419C381C62870600E51BC4 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					26419C4C1C62870600E51BC4 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 26419C381C62870600E51BC4;
+					};
+					26419C571C62870600E51BC4 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 26419C381C62870600E51BC4;
+					};
+				};
+			};
+			buildConfigurationList = 26419C341C62870600E51BC4 /* Build configuration list for PBXProject "Scheduler" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 26419C301C62870600E51BC4;
+			productRefGroup = 26419C3A1C62870600E51BC4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26419C381C62870600E51BC4 /* Scheduler */,
+				26419C4C1C62870600E51BC4 /* SchedulerTests */,
+				26419C571C62870600E51BC4 /* SchedulerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		26419C371C62870600E51BC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				268947C81C987C7A00C30A3B /* Main.storyboard in Resources */,
+				26419C471C62870600E51BC4 /* LaunchScreen.storyboard in Resources */,
+				26419C441C62870600E51BC4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26419C4B1C62870600E51BC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26419C561C62870600E51BC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26419C351C62870600E51BC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A6EB7E1CC6A43800975907 /* DoneViewController.swift in Sources */,
+				26EF73D31C86148700A8E304 /* TaskTableViewController.swift in Sources */,
+				26FDA1671C8A426000503AB1 /* NewTaskViewController.swift in Sources */,
+				26EF73CF1C84B52500A8E304 /* Task.swift in Sources */,
+				26D6541F1C9A669D0069CF3D /* SettingsViewController.swift in Sources */,
+				2675A0261C987AC60092DB79 /* GeneratedScheduleTableViewController.swift in Sources */,
+				26419C3F1C62870600E51BC4 /* StartViewController.swift in Sources */,
+				264DD0EC1CA3058B003ABA6C /* Settings.swift in Sources */,
+				26A1413E1CC19255001AF412 /* TaskTimerViewController.swift in Sources */,
+				26EF73D11C86123300A8E304 /* TaskTableViewCell.swift in Sources */,
+				261524151C6E9BA100B81A3A /* PrioritySystem.swift in Sources */,
+				26E87C921C9CB00500902F01 /* TaskTimer.swift in Sources */,
+				260C058F1C971F5B00E13098 /* GenerateScheduleViewController.swift in Sources */,
+				26419C3D1C62870600E51BC4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26419C491C62870600E51BC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26419C521C62870600E51BC4 /* SchedulerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26419C541C62870600E51BC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26419C5D1C62870600E51BC4 /* SchedulerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		26419C4F1C62870600E51BC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26419C381C62870600E51BC4 /* Scheduler */;
+			targetProxy = 26419C4E1C62870600E51BC4 /* PBXContainerItemProxy */;
+		};
+		26419C5A1C62870600E51BC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26419C381C62870600E51BC4 /* Scheduler */;
+			targetProxy = 26419C591C62870600E51BC4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		26419C451C62870600E51BC4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26419C461C62870600E51BC4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		26419C5F1C62870600E51BC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		26419C601C62870600E51BC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		26419C621C62870600E51BC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Scheduler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Omnicon.Scheduler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		26419C631C62870600E51BC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Scheduler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Omnicon.Scheduler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		26419C651C62870600E51BC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SchedulerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Omnicon.SchedulerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Scheduler.app/Scheduler";
+			};
+			name = Debug;
+		};
+		26419C661C62870600E51BC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SchedulerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Omnicon.SchedulerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Scheduler.app/Scheduler";
+			};
+			name = Release;
+		};
+		26419C681C62870600E51BC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SchedulerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Omnicon.SchedulerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Scheduler;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		26419C691C62870600E51BC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SchedulerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Omnicon.SchedulerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Scheduler;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26419C341C62870600E51BC4 /* Build configuration list for PBXProject "Scheduler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26419C5F1C62870600E51BC4 /* Debug */,
+				26419C601C62870600E51BC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26419C611C62870600E51BC4 /* Build configuration list for PBXNativeTarget "Scheduler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26419C621C62870600E51BC4 /* Debug */,
+				26419C631C62870600E51BC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26419C641C62870600E51BC4 /* Build configuration list for PBXNativeTarget "SchedulerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26419C651C62870600E51BC4 /* Debug */,
+				26419C661C62870600E51BC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26419C671C62870600E51BC4 /* Build configuration list for PBXNativeTarget "SchedulerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26419C681C62870600E51BC4 /* Debug */,
+				26419C691C62870600E51BC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 26419C311C62870600E51BC4 /* Project object */;
+}
