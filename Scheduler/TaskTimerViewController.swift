@@ -52,7 +52,10 @@ class TaskTimerViewController: UIViewController {
     
     //MARK: Actions
     private func timeAsString (time: Int) -> String {
-        return String(format: "%02d:%02d:%02d", Int(time/3600), Int(time/60), Int(time%60))
+        let hours = Int(time/3600)
+        let minutes = Int((time-hours*3600)/60)
+        let seconds = Int(time%60)
+        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
     
     func updateElapsedTime(timer: NSTimer) {
