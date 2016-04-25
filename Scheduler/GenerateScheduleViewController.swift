@@ -33,6 +33,7 @@ class GenerateScheduleViewController: UIViewController {
         for task in tasks! {
             totalTaskTime += task.time
         }
+        warn()
         // Do any additional setup after loading the view.
     }
     override func didReceiveMemoryWarning() {
@@ -41,14 +42,18 @@ class GenerateScheduleViewController: UIViewController {
     }
     
     @IBAction func updateWarning(sender: UIDatePicker) {
+        warn()
+    }
+    
+    func warn() {
         print("\(timeSelector.countDownDuration) | \(totalTaskTime)")
         if Int(timeSelector.countDownDuration) < totalTaskTime {
-            print("meow")
             warningLabel.text = "Warning: Not enough time!"
         } else {
             warningLabel.text = ""
             if taskless {
                 warningLabel.text = "Warning: You have no tasks!"
+                goButton.enabled = false
             }
         }
     }
