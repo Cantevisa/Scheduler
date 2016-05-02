@@ -16,11 +16,13 @@ class GenerateScheduleViewController: UIViewController {
     @IBOutlet weak var warningLabel: UILabel!
     var totalTaskTime: Int = 0
     var taskless: Bool = false
+    @IBOutlet weak var warningLabel2: UILabel!
     
     struct info {
         static var timeConstraint: Int = 0
     }
     
+    //MARK: - Override Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         // There is a bug that makes the value changed event only occur the second time the value is changed. The following line automatically changes the value of the datepicker to 0, 5 so that the user's input is already the second time (apparently 1970 started at 16:00, and 57600 is 16 hours).
@@ -49,6 +51,7 @@ class GenerateScheduleViewController: UIViewController {
         print("\(timeSelector.countDownDuration) | \(totalTaskTime)")
         if Int(timeSelector.countDownDuration) < totalTaskTime {
             warningLabel.text = "Warning: Not enough time!"
+            warningLabel2.text = "You need \(secondsToHoursAndMinutes(totalTaskTime-Int(timeSelector.countDownDuration))) more."
         } else {
             warningLabel.text = ""
             if taskless {
@@ -58,7 +61,7 @@ class GenerateScheduleViewController: UIViewController {
         }
     }
     
-    // MARK: - Navigation
+    // MARK: Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

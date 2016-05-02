@@ -64,7 +64,7 @@ class GeneratedScheduleTableViewController: UITableViewController {
         let task = tasks![indexPath.row]
         
         cell.taskNameLabel.text = task.name
-        cell.timeLabel.text = task.secondsToHoursAndMinutes(task.time)
+        cell.timeLabel.text = secondsToHoursAndMinutes(task.time)
         if task.priority == 1 {
             cell.priorityImage.image = lowPImage
         } else if task.priority == 2 {

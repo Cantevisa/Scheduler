@@ -20,6 +20,7 @@
 		268947C81C987C7A00C30A3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 268947C71C987C7A00C30A3B /* Main.storyboard */; };
 		26A1413E1CC19255001AF412 /* TaskTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1413D1CC19255001AF412 /* TaskTimerViewController.swift */; };
 		26A6EB7E1CC6A43800975907 /* DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A6EB7D1CC6A43800975907 /* DoneViewController.swift */; };
+		26BB2DA71CD7B8F100A8D974 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BB2DA61CD7B8F100A8D974 /* HelperFunctions.swift */; };
 		26D6541F1C9A669D0069CF3D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D6541E1C9A669D0069CF3D /* SettingsViewController.swift */; };
 		26E87C921C9CB00500902F01 /* TaskTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E87C911C9CB00500902F01 /* TaskTimer.swift */; };
 		26EF73CF1C84B52500A8E304 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF73CE1C84B52500A8E304 /* Task.swift */; };
@@ -65,6 +66,7 @@
 		268947C71C987C7A00C30A3B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		26A1413D1CC19255001AF412 /* TaskTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTimerViewController.swift; sourceTree = "<group>"; };
 		26A6EB7D1CC6A43800975907 /* DoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneViewController.swift; sourceTree = "<group>"; };
+		26BB2DA61CD7B8F100A8D974 /* HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		26D6541E1C9A669D0069CF3D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		26E87C911C9CB00500902F01 /* TaskTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTimer.swift; sourceTree = "<group>"; };
 		26EF73CE1C84B52500A8E304 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				26419C3C1C62870600E51BC4 /* AppDelegate.swift */,
 				26419C451C62870600E51BC4 /* LaunchScreen.storyboard */,
 				268947C71C987C7A00C30A3B /* Main.storyboard */,
+				26BB2DA61CD7B8F100A8D974 /* HelperFunctions.swift */,
 				26419C431C62870600E51BC4 /* Assets.xcassets */,
 				26419C481C62870600E51BC4 /* Info.plist */,
 			);
@@ -297,6 +300,7 @@
 				26FDA1671C8A426000503AB1 /* NewTaskViewController.swift in Sources */,
 				26EF73CF1C84B52500A8E304 /* Task.swift in Sources */,
 				26D6541F1C9A669D0069CF3D /* SettingsViewController.swift in Sources */,
+				26BB2DA71CD7B8F100A8D974 /* HelperFunctions.swift in Sources */,
 				2675A0261C987AC60092DB79 /* GeneratedScheduleTableViewController.swift in Sources */,
 				26419C3F1C62870600E51BC4 /* StartViewController.swift in Sources */,
 				264DD0EC1CA3058B003ABA6C /* Settings.swift in Sources */,
