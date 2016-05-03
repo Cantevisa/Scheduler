@@ -2,7 +2,7 @@
 //  SettingsViewController.swift
 //  Scheduler
 //
-//  Created by Vanessa Woo on 3.16.16.
+//  Created by Samantha Cantevisa on 3.16.16.
 //  Copyright © 2016 Omnicon Industries. All rights reserved.
 //
 

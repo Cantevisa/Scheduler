@@ -2,7 +2,7 @@
 //  SchedulerTests.swift
 //  SchedulerTests
 //
-//  Created by Vanessa Woo on 2.3.16.
+//  Created by Samantha Cantevisa on 2.3.16.
 //  Copyright © 2016 Omnicon Industries. All rights reserved.
 //
 

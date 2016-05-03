@@ -2,7 +2,7 @@
 //  DoneViewController.swift
 //  Scheduler
 //
-//  Created by Vanessa Woo on 4.19.16.
+//  Created by Samantha Cantevisa on 4.19.16.
 //  Copyright © 2016 Omnicon Industries. All rights reserved.
 //
 

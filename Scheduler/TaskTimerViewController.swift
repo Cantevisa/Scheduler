@@ -2,7 +2,7 @@
 //  TaskTimerViewController.swift
 //  Scheduler
 //
-//  Created by Vanessa Woo on 4.15.16.
+//  Created by Samantha Cantevisa on 4.15.16.
 //  Copyright © 2016 Omnicon Industries. All rights reserved.
 //
 
