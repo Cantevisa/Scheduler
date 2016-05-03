@@ -17,6 +17,7 @@ class GenerateScheduleViewController: UIViewController {
     var totalTaskTime: Int = 0
     var taskless: Bool = false
     @IBOutlet weak var warningLabel2: UILabel!
+    var warningTimer: NSTimer?
     
     struct info {
         static var timeConstraint: Int = 0
@@ -26,6 +27,7 @@ class GenerateScheduleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // There is a bug that makes the value changed event only occur the second time the value is changed. The following line automatically changes the value of the datepicker to 0, 5 so that the user's input is already the second time (apparently 1970 started at 16:00, and 57600 is 16 hours).
+        timeSelector.setDate(NSDate(), animated: false)
         timeSelector.setDate(NSDate(timeIntervalSince1970: -57600.0), animated: false)
         let tasks = NSKeyedUnarchiver.unarchiveObjectWithFile(Task.ArchiveURL.path!) as? [Task]
         if tasks!.isEmpty {
@@ -35,16 +37,19 @@ class GenerateScheduleViewController: UIViewController {
         for task in tasks! {
             totalTaskTime += task.time
         }
-        warn()
+        warningTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "warn", userInfo: nil, repeats: true)
         // Do any additional setup after loading the view.
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func updateWarning(sender: UIDatePicker) {
-        warn()
+    override func viewWillDisappear(animated: Bool) {
+        if let timer = self.warningTimer {
+            timer.invalidate()
+        }
     }
     
     func warn() {
@@ -54,6 +59,7 @@ class GenerateScheduleViewController: UIViewController {
             warningLabel2.text = "You need \(secondsToHoursAndMinutes(totalTaskTime-Int(timeSelector.countDownDuration))) more."
         } else {
             warningLabel.text = ""
+            warningLabel2.text = ""
             if taskless {
                 warningLabel.text = "Warning: You have no tasks!"
                 goButton.enabled = false

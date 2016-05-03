@@ -13,7 +13,7 @@ func secondsToHoursAndMinutes (seconds : Int) -> (String) {
     let minutes = (seconds % 3600) / 60
     if hours > 0 {
         if hours == 1 {
-            return "\(hours) hours and \(minutes) minutes"
+            return "\(hours) hour and \(minutes) minutes"
         }
         return "\(hours) hours and \(minutes) minutes"
     } else {

@@ -370,9 +370,6 @@
                                 <date key="date" timeIntervalSinceReferenceDate="473328000.71295202">
                                     <!--2016-01-01 08:00:00 +0000-->
                                 </date>
-                                <connections>
-                                    <action selector="updateWarning:" destination="U0Y-ee-hZX" eventType="valueChanged" id="heW-j9-LFY"/>
-                                </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How much time do you have?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtw-Vk-NvT">
                                 <rect key="frame" x="188" y="237" width="225" height="21"/>
@@ -387,9 +384,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnR-Lr-zfu">
-                                <rect key="frame" x="279" y="365" width="42" height="21"/>
+                                <rect key="frame" x="300" y="365" width="0.0" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="KPt-0r-gZK"/>
                                     <constraint firstAttribute="height" constant="21" id="zjb-Xp-v2M"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
