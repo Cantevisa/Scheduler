@@ -39,7 +39,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scheduler" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5b8-89-KV2">
                                 <rect key="frame" x="213" y="162" width="174" height="48"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="40"/>
-                                <color key="textColor" red="0.091465936040000001" green="0.32808716840000002" blue="0.63760653410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.090196078431372548" green="0.32941176470588235" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Qi-6Z-upT">
@@ -282,7 +282,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="gJd-sL-0xi">
-                            <rect key="frame" x="0.0" y="94" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="158" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
                                 <barButtonItem title="Generate Custom Schedule" id="nxG-mr-2g2">
@@ -300,7 +300,7 @@
                         </toolbar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TaskTableViewCell" rowHeight="66" id="q7F-sf-FWh" customClass="TaskTableViewCell" customModule="Scheduler" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="66"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q7F-sf-FWh" id="6Ow-dr-55g">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="65"/>
@@ -438,7 +438,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GeneratedTableViewCell" rowHeight="66" id="37h-io-X6N" customClass="TaskTableViewCell" customModule="Scheduler" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="66"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="37h-io-X6N" id="JMk-1o-bMR">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>
@@ -716,9 +716,9 @@
         <image name="StatsIcon" width="210" height="210"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="jwa-oK-npT"/>
         <segue reference="kUb-n2-9j3"/>
-        <segue reference="oI1-mz-YuO"/>
-        <segue reference="YJg-Uv-hAJ"/>
         <segue reference="Icz-3V-mb3"/>
+        <segue reference="YJg-Uv-hAJ"/>
     </inferredMetricsTieBreakers>
 </document>
