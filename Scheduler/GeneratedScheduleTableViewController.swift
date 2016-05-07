@@ -11,7 +11,7 @@ import UIKit
 class GeneratedScheduleTableViewController: UITableViewController {
     
     //MARK: Properties
-    var tasks = NSKeyedUnarchiver.unarchiveObjectWithFile(Task.ArchiveURL.path!) as? [Task]
+    var tasks = loadTasks()
     let breakTime = SettingsViewController.CurrentSettings.currentSettings.breakTime * 60
     let longestFirst = SettingsViewController.CurrentSettings.currentSettings.longestFirst
     let highPImage = UIImage(named: "PressedHighPriority")!
@@ -124,11 +124,21 @@ class GeneratedScheduleTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var totalTaskTime: Double = 0.0
         for task in tasks! {
             print("\(task.name)")
+            totalTaskTime += Double(task.time)
         }
         saveTasks()
+        let localNotification = UILocalNotification()
+        localNotification.fireDate = NSDate(timeIntervalSinceNow: totalTaskTime)
+        localNotification.alertBody = "Your time is up!"
+        localNotification.timeZone = NSTimeZone.defaultTimeZone()
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        print("NOTIFICATION SET!!! Will go off in \(secondsToHoursAndMinutes(Int(totalTaskTime)))")
     }
+    
     
     //MARK: NSCoding
     func saveTasks() {

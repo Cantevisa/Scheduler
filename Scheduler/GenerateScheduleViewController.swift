@@ -29,7 +29,7 @@ class GenerateScheduleViewController: UIViewController {
         // There is a bug that makes the value changed event only occur the second time the value is changed. The following line automatically changes the value of the datepicker to 0, 5 so that the user's input is already the second time (apparently 1970 started at 16:00, and 57600 is 16 hours).
         timeSelector.setDate(NSDate(), animated: false)
         timeSelector.setDate(NSDate(timeIntervalSince1970: -57600.0), animated: false)
-        let tasks = NSKeyedUnarchiver.unarchiveObjectWithFile(Task.ArchiveURL.path!) as? [Task]
+        let tasks = loadTasks()
         if tasks!.isEmpty {
             warningLabel.text = "Warning: You have no tasks!"
             taskless = true
@@ -37,7 +37,7 @@ class GenerateScheduleViewController: UIViewController {
         for task in tasks! {
             totalTaskTime += task.time
         }
-        warningTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "warn", userInfo: nil, repeats: true)
+        warningTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(GenerateScheduleViewController.warn), userInfo: nil, repeats: true)
         // Do any additional setup after loading the view.
     }
     

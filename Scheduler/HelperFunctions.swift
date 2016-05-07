@@ -20,3 +20,20 @@ func secondsToHoursAndMinutes (seconds : Int) -> (String) {
         return "\(minutes) minutes"
     }
 }
+
+func average (array : [Int]) -> Int {
+    var total = 0
+    for value in array {
+        total += value
+    }
+    return total/array.count
+}
+
+//MARK: NSCoding
+func loadTasks() -> [Task]? {
+    return NSKeyedUnarchiver.unarchiveObjectWithFile(Task.ArchiveURL.path!) as? [Task]
+}
+
+func loadStats() -> Statistics? {
+    return NSKeyedUnarchiver.unarchiveObjectWithFile(Statistics.ArchiveURL.path!) as? Statistics
+}

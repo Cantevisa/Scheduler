@@ -31,7 +31,7 @@ class PrioritySystem: UIView {
         self.buttonImageList = [unpressedHPImage!,unpressedMPImage!,unpressedLPImage!,pressedHPImage!,pressedMPImage!,pressedLPImage!]
         for _ in 0..<3 {
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
-            button.addTarget(self, action: "priorityButtonTapped:", forControlEvents: .TouchDown)
+            button.addTarget(self, action: #selector(PrioritySystem.priorityButtonTapped(_:)), forControlEvents: .TouchDown)
             priorityButtons.append(button)
             addSubview(button)
         }

@@ -21,20 +21,12 @@ class DoneViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func clearOnceDone(sender: UIButton) {
-        // empty list of saved tasks when the app restarts
-        let emptyList = [Task]()
-        NSKeyedArchiver.archiveRootObject(emptyList, toFile: Task.ArchiveURL.path!)
-    }
-    
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let emptyList = [Task]()
+        NSKeyedArchiver.archiveRootObject(emptyList, toFile: Task.ArchiveURL.path!)
     }
-    */
 
 }
