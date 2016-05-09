@@ -67,13 +67,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scheduler" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5b8-89-KV2">
-                                <rect key="frame" x="213" y="162" width="174" height="48"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="40"/>
+                                <rect key="frame" x="170" y="162" width="261" height="71"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="60"/>
                                 <color key="textColor" red="0.090196078431372548" green="0.32941176470588235" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Qi-6Z-upT">
-                                <rect key="frame" x="275" y="244" width="50" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Qi-6Z-upT">
+                                <rect key="frame" x="269" y="262" width="62" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Manual"/>
                                 <connections>
                                     <action selector="activateManualMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="POv-dK-0QD"/>
@@ -81,17 +82,18 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCU-jb-pyb">
-                                <rect key="frame" x="265" y="285" width="70" height="30"/>
+                                <rect key="frame" x="254" y="303" width="92" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Automatic"/>
                                 <connections>
                                     <segue destination="atb-iN-fur" kind="presentation" id="6sp-h1-EPa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7O7-37-i7b">
-                                <rect key="frame" x="286" y="368" width="28" height="28"/>
+                                <rect key="frame" x="278" y="382" width="45" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="6u8-JY-nTz"/>
-                                    <constraint firstAttribute="width" constant="28" id="oif-MM-Re8"/>
+                                    <constraint firstAttribute="height" constant="45" id="6u8-JY-nTz"/>
+                                    <constraint firstAttribute="width" constant="45" id="oif-MM-Re8"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="SettingsButton"/>
                                 <state key="selected" image="SettingsButton"/>
@@ -100,9 +102,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RrS-zW-AGM">
-                                <rect key="frame" x="286" y="417" width="28" height="28"/>
+                                <rect key="frame" x="278" y="442" width="45" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="TXj-Ad-HEg"/>
+                                    <constraint firstAttribute="height" constant="45" id="TXj-Ad-HEg"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="StatsIcon"/>
                                 <state key="selected" image="SettingsButton"/>
@@ -116,14 +118,14 @@
                             <constraint firstItem="RrS-zW-AGM" firstAttribute="height" secondItem="7O7-37-i7b" secondAttribute="height" id="7Ve-qS-tQS"/>
                             <constraint firstItem="RrS-zW-AGM" firstAttribute="width" secondItem="7O7-37-i7b" secondAttribute="height" multiplier="1:1" id="Fvk-0p-BWu"/>
                             <constraint firstItem="5b8-89-KV2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="142" id="MEp-MS-qlm"/>
-                            <constraint firstItem="KCU-jb-pyb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="265" id="QUK-hc-1r6"/>
+                            <constraint firstItem="KCU-jb-pyb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="283" id="QUK-hc-1r6"/>
                             <constraint firstItem="RrS-zW-AGM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T25-Ek-Ig6"/>
                             <constraint firstItem="7O7-37-i7b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bYY-SQ-oWS"/>
-                            <constraint firstItem="7O7-37-i7b" firstAttribute="top" secondItem="KCU-jb-pyb" secondAttribute="bottom" constant="53" id="eN4-AG-GwF"/>
+                            <constraint firstItem="7O7-37-i7b" firstAttribute="top" secondItem="KCU-jb-pyb" secondAttribute="bottom" constant="43" id="eN4-AG-GwF"/>
                             <constraint firstItem="5b8-89-KV2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fjO-0P-rZ5"/>
-                            <constraint firstItem="8Qi-6Z-upT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="224" id="jLH-rH-2jD"/>
+                            <constraint firstItem="8Qi-6Z-upT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="242" id="jLH-rH-2jD"/>
                             <constraint firstItem="8Qi-6Z-upT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rPb-2n-GMD"/>
-                            <constraint firstItem="RrS-zW-AGM" firstAttribute="top" secondItem="7O7-37-i7b" secondAttribute="bottom" constant="21" id="v1F-ei-9rO"/>
+                            <constraint firstItem="RrS-zW-AGM" firstAttribute="top" secondItem="7O7-37-i7b" secondAttribute="bottom" constant="15" id="v1F-ei-9rO"/>
                             <constraint firstItem="KCU-jb-pyb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w6C-hx-Rq2"/>
                         </constraints>
                     </view>
@@ -225,12 +227,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Task Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MM6-sx-kF2">
-                                <rect key="frame" x="197" y="161" width="206" height="30"/>
+                                <rect key="frame" x="178" y="161" width="244" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ErE-VT-4N0"/>
-                                    <constraint firstAttribute="width" constant="206" id="odj-ra-oqD"/>
+                                    <constraint firstAttribute="width" constant="244" id="odj-ra-oqD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgH-XB-ES4">
@@ -763,10 +765,10 @@
         <image name="StatsIcon" width="210" height="210"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hQn-Dc-4ML"/>
         <segue reference="Slu-3d-kQL"/>
-        <segue reference="YJg-Uv-hAJ"/>
-        <segue reference="oI1-mz-YuO"/>
+        <segue reference="hQn-Dc-4ML"/>
         <segue reference="zWN-Qs-2wb"/>
+        <segue reference="4e3-KK-j3d"/>
+        <segue reference="YJg-Uv-hAJ"/>
     </inferredMetricsTieBreakers>
 </document>
