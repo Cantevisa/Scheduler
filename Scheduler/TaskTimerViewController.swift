@@ -58,18 +58,12 @@ class TaskTimerViewController: UIViewController {
     
     
     //MARK: Actions
-    private func timeAsString (time: Int) -> String {
-        let hours = Int(time/3600)
-        let minutes = Int((time-hours*3600)/60)
-        let seconds = Int(time%60)
-        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
-    }
-    
     func updateElapsedTime(timer: NSTimer) {
         if taskTimer.isRunning {
             timerLabel.text = "\(timeAsString(abs(tasks![taskIndex].time - Int(taskTimer.elapsedTime))))"
             if abs(tasks![taskIndex].time - Int(taskTimer.elapsedTime)) == 0 {
                 overtime = -1
+                timerLabel.textColor = UIColor.redColor()
             }
         } else {
             timer.invalidate()
@@ -80,6 +74,7 @@ class TaskTimerViewController: UIViewController {
         differences.append(overtime*(tasks![taskIndex].time - Int(taskTimer.elapsedTime)))
         taskIndex += 1
         overtime = 1
+        timerLabel.textColor = UIColor.blackColor()
         if taskIndex < tasks!.count {
             taskTimer.start()
             let task = tasks![taskIndex]

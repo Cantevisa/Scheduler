@@ -12,18 +12,21 @@ class StatisticsViewController: UIViewController {
 
     //MARK: Properties
     @IBOutlet weak var avgDiffLabel: UILabel!
+    @IBOutlet weak var coloredLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if let savedStats = loadStats() {
-            var moreOrLess = "more"
             if savedStats.averageDifference < 0 {
-                moreOrLess = "less"
+                avgDiffLabel.textColor = UIColor.redColor()
+                avgDiffLabel.text = "-\(timeAsString(abs(savedStats.averageDifference)))"
+            } else {
+                avgDiffLabel.textColor = coloredLabel.textColor
+                avgDiffLabel.text = "\(timeAsString(savedStats.averageDifference))"
             }
-            avgDiffLabel.text = "Your estimations are, on average, \(secondsToHoursAndMinutes(savedStats.averageDifference)) \(moreOrLess) than your actual task completion time."
         } else {
-            avgDiffLabel.text = "You have not used the app enough to have statistics."
+            avgDiffLabel.text = "Not Available"
         }
 
         // Do any additional setup after loading the view.
