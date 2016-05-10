@@ -26,7 +26,7 @@ class StatisticsViewController: UIViewController {
                 avgDiffLabel.text = "\(timeAsString(savedStats.averageDifference))"
             }
         } else {
-            avgDiffLabel.text = "Not Available"
+            avgDiffLabel.text = "You have not used the app enough to have statistics."
         }
 
         // Do any additional setup after loading the view.

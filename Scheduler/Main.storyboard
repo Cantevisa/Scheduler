@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Statistics-->
@@ -18,13 +19,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agl-Hc-SuL">
-                                <rect key="frame" x="141" y="252" width="319" height="96"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agl-Hc-SuL">
+                                <rect key="frame" x="0.0" y="252" width="600" height="96"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="80"/>
                                 <color key="textColor" red="0.090196078430000007" green="0.3294117647" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average difference between estimated time and actual time to complete task:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjj-jT-oQZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average difference between estimated time and actual time to complete task:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjj-jT-oQZ">
                                 <rect key="frame" x="59" y="169" width="483" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="483" id="GL6-LO-xPJ"/>
@@ -42,8 +43,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="yjj-jT-oQZ" firstAttribute="leading" secondItem="gzV-vx-GYY" secondAttribute="leadingMargin" constant="39" id="2fN-hP-0X7"/>
+                            <constraint firstItem="agl-Hc-SuL" firstAttribute="width" secondItem="gzV-vx-GYY" secondAttribute="width" id="9qK-2B-0Wv"/>
                             <constraint firstItem="yjj-jT-oQZ" firstAttribute="centerX" secondItem="gzV-vx-GYY" secondAttribute="centerX" id="KlG-xp-FsO"/>
                             <constraint firstItem="agl-Hc-SuL" firstAttribute="top" secondItem="yjj-jT-oQZ" secondAttribute="bottom" constant="23" id="Zzc-AC-bIn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yjj-jT-oQZ" secondAttribute="trailing" constant="38" id="bve-aO-dol"/>
                             <constraint firstItem="agl-Hc-SuL" firstAttribute="centerX" secondItem="gzV-vx-GYY" secondAttribute="centerX" id="pPy-yL-lbM"/>
                             <constraint firstItem="agl-Hc-SuL" firstAttribute="centerY" secondItem="gzV-vx-GYY" secondAttribute="centerY" id="uIY-Ln-FYK"/>
                         </constraints>
@@ -67,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCy-oV-q6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-34" y="-579"/>
+            <point key="canvasLocation" x="-42" y="-703"/>
         </scene>
         <!--Start Menu-->
         <scene sceneID="tne-QT-ifu">
@@ -147,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="568" y="-633"/>
+            <point key="canvasLocation" x="900" y="-317"/>
         </scene>
         <!--Settings-->
         <scene sceneID="MGf-Ow-Wmd">
@@ -631,7 +635,6 @@
                                 <rect key="frame" x="261" y="365" width="79" height="30"/>
                                 <state key="normal" title="Back Home"/>
                                 <connections>
-                                    <action selector="clearOnceDone:" destination="R8g-2F-eVe" eventType="touchUpInside" id="1Ov-c3-cCX"/>
                                     <segue destination="BYZ-38-t0r" kind="presentation" id="bkH-lz-cbJ"/>
                                 </connections>
                             </button>
@@ -658,7 +661,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1oz-YS-Rnv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5088" y="-534"/>
+            <point key="canvasLocation" x="1176" y="690"/>
         </scene>
         <!--NewTaskNavVC-->
         <scene sceneID="A86-k6-NSE">
@@ -780,10 +783,10 @@
         <image name="StatsIcon" width="210" height="210"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hQn-Dc-4ML"/>
-        <segue reference="Slu-3d-kQL"/>
-        <segue reference="jwa-oK-npT"/>
         <segue reference="YJg-Uv-hAJ"/>
+        <segue reference="jwa-oK-npT"/>
+        <segue reference="bkH-lz-cbJ"/>
+        <segue reference="2VE-AK-1jl"/>
         <segue reference="zWN-Qs-2wb"/>
     </inferredMetricsTieBreakers>
 </document>
