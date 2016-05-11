@@ -83,7 +83,7 @@ class TaskTableViewController: UITableViewController {
             // Delete the row from the data source
             tasks.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            saveTasks()
+            saveObject(tasks, path: Task.ArchiveURL.path!)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
@@ -94,7 +94,7 @@ class TaskTableViewController: UITableViewController {
         let taskToMove: Task = tasks[fromIndexPath.row]
         tasks.removeAtIndex(fromIndexPath.row)
         tasks.insert(taskToMove, atIndex: toIndexPath.row)
-        saveTasks()
+        saveObject(tasks, path: Task.ArchiveURL.path!)
     }
 
     /*
@@ -109,7 +109,7 @@ class TaskTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        saveTasks()
+        saveObject(tasks, path: Task.ArchiveURL.path!)
         if segue.identifier == "ShowDetail" {
             print("Editing existing task.")
             let taskDetailViewController = segue.destinationViewController as! NewTaskViewController
@@ -143,15 +143,10 @@ class TaskTableViewController: UITableViewController {
             }
         }
         // save the tasks
-        saveTasks()
+        saveObject(tasks, path: Task.ArchiveURL.path!)
     }
 
     //MARK: NSCoding
-    func saveTasks() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(tasks, toFile: Task.ArchiveURL.path!)
-        if !isSuccessfulSave {
-            print("Failed to save tasks.")
-        }
-    }
+    
     
 }

@@ -39,7 +39,7 @@ class StatisticsViewController: UIViewController {
     
     @IBAction func clearStats(sender: UIBarButtonItem) {
         let emptyList = [Statistics]()
-        NSKeyedArchiver.archiveRootObject(emptyList, toFile: Statistics.ArchiveURL.path!)
+        saveObject(emptyList, path: Statistics.ArchiveURL.path!)
         avgDiffLabel.text = "You have not used the app enough to have statistics."
     }
 

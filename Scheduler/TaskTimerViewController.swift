@@ -91,18 +91,10 @@ class TaskTimerViewController: UIViewController {
         } else {
             print("done with everything")
             taskTimer.stop()
-            saveStats()
+            let newStats = Statistics(differences: differences)
+            saveObject(newStats!, path: Statistics.ArchiveURL.path!)
             print ("Saving stats with averageDifference of \(loadStats()!.averageDifference)")
             self.navigationController!.performSegueWithIdentifier("done", sender: sender)
-        }
-    }
-    
-    //MARK: Statistics
-    func saveStats() {
-        let newStats = Statistics(differences: differences)
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(newStats!, toFile: Statistics.ArchiveURL.path!)
-        if !isSuccessfulSave {
-            print("Failed to save tasks.")
         }
     }
     

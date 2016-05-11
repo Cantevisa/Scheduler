@@ -30,7 +30,7 @@ class SettingsViewController: UIViewController {
             longerTasksSwitch.setOn(savedSettings.longestFirst, animated: false)
         }
         timeLabel.text = String(Int(breakTimeSlider.value))
-        NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: "updateSettings", userInfo: nil, repeats: true)
+        NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: #selector(SettingsViewController.updateSettings), userInfo: nil, repeats: true)
 
         // Do any additional setup after loading the view.
     }
@@ -52,13 +52,6 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    func saveSettings() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(CurrentSettings.currentSettings, toFile: Settings.ArchiveURL.path!)
-        if !isSuccessfulSave {
-            print("Failed to save settings.")
-        }
-    }
-    
     func loadSettings() -> Settings? {
         return NSKeyedUnarchiver.unarchiveObjectWithFile(Settings.ArchiveURL.path!) as? Settings
     }
@@ -66,7 +59,7 @@ class SettingsViewController: UIViewController {
     // MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "save" {
-            saveSettings()
+            saveObject(CurrentSettings.currentSettings, path: Settings.ArchiveURL.path!)
         }
     }
 }

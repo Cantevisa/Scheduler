@@ -7,7 +7,8 @@
 //
 
 import Foundation
-    
+
+//MARK: Time Formatting
 func secondsToHoursAndMinutes (seconds : Int) -> (String) {
     let hours = seconds / 3600
     let minutes = (seconds % 3600) / 60
@@ -28,6 +29,7 @@ func timeAsString (time: Int) -> String {
     return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
 }
 
+//MARK: Math
 func average (array : [Int]) -> Int {
     var total = 0
     for value in array {
@@ -36,11 +38,18 @@ func average (array : [Int]) -> Int {
     return total/array.count
 }
 
-//MARK: NSCoding
+//MARK: - NSCoding
 func loadTasks() -> [Task]? {
     return NSKeyedUnarchiver.unarchiveObjectWithFile(Task.ArchiveURL.path!) as? [Task]
 }
 
 func loadStats() -> Statistics? {
     return NSKeyedUnarchiver.unarchiveObjectWithFile(Statistics.ArchiveURL.path!) as? Statistics
+}
+
+func saveObject(object: NSObject, path: String) {
+    let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(object, toFile: path)
+    if !isSuccessfulSave {
+        print("Failed to save tasks.")
+    }
 }

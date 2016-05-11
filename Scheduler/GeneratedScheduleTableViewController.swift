@@ -102,7 +102,7 @@ class GeneratedScheduleTableViewController: UITableViewController {
         let taskToMove: Task = tasks![fromIndexPath.row]
         tasks!.removeAtIndex(fromIndexPath.row)
         tasks!.insert(taskToMove, atIndex: toIndexPath.row)
-        saveTasks()
+        saveObject(tasks!, path: Task.ArchiveURL.path!)
     }
     
     override func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -129,7 +129,7 @@ class GeneratedScheduleTableViewController: UITableViewController {
             print("\(task.name)")
             totalTaskTime += Double(task.time)
         }
-        saveTasks()
+        saveObject(tasks!, path: Task.ArchiveURL.path!)
         let localNotification = UILocalNotification()
         localNotification.fireDate = NSDate(timeIntervalSinceNow: totalTaskTime)
         localNotification.alertBody = "Your time is up!"
@@ -137,17 +137,6 @@ class GeneratedScheduleTableViewController: UITableViewController {
         
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
         print("NOTIFICATION SET!!! Will go off in \(secondsToHoursAndMinutes(Int(totalTaskTime)))")
-    }
-    
-    
-    //MARK: NSCoding
-    func saveTasks() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(tasks!, toFile: Task.ArchiveURL.path!)
-        if !isSuccessfulSave {
-            print("Failed to save tasks.")
-        } else {
-            print("Successfully saved! Yay")
-        }
     }
     
     //MARK: - Generation
@@ -167,7 +156,7 @@ class GeneratedScheduleTableViewController: UITableViewController {
             if numBreaks >= tasks!.count {
                 numBreaks = tasks!.count - 1
             }
-            for var i = 1; i <= numBreaks; ++i {
+            for var i = 1; i <= numBreaks; i += 1 {
                 var insertIndex: Int = (i * numBreaks - 1)
                 if insertIndex == 0 {
                     insertIndex += numBreaks
@@ -180,6 +169,6 @@ class GeneratedScheduleTableViewController: UITableViewController {
                 }
             }
         }
-        saveTasks()
+        saveObject(tasks!, path: Task.ArchiveURL.path!)
     }
 }
