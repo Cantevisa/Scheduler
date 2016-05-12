@@ -54,7 +54,6 @@ class PrioritySystem: UIView {
             button.adjustsImageWhenHighlighted = false
             button.frame = buttonFrame
         }
-        updateButtonSelectionStates()
     }
     
     //MARK: - Actions
