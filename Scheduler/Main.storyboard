@@ -551,7 +551,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5v-RJ-bGV">
-                                <rect key="frame" x="268" y="407" width="64" height="30"/>
+                                <rect key="frame" x="259" y="407" width="83" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="I'm done!"/>
                                 <connections>
                                     <action selector="nextTask:" destination="8fg-m6-Slg" eventType="touchUpInside" id="JIu-1i-xGb"/>
@@ -783,10 +784,10 @@
         <image name="StatsIcon" width="210" height="210"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YJg-Uv-hAJ"/>
-        <segue reference="jwa-oK-npT"/>
+        <segue reference="bYo-fs-8IH"/>
         <segue reference="bkH-lz-cbJ"/>
-        <segue reference="2VE-AK-1jl"/>
+        <segue reference="jwa-oK-npT"/>
+        <segue reference="hQn-Dc-4ML"/>
         <segue reference="zWN-Qs-2wb"/>
     </inferredMetricsTieBreakers>
 </document>
