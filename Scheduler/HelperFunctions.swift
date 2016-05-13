@@ -47,6 +47,10 @@ func loadStats() -> Statistics? {
     return NSKeyedUnarchiver.unarchiveObjectWithFile(Statistics.ArchiveURL.path!) as? Statistics
 }
 
+func loadSettings() -> Settings? {
+    return NSKeyedUnarchiver.unarchiveObjectWithFile(Settings.ArchiveURL.path!) as? Settings
+}
+
 func saveObject(object: NSObject, path: String) {
     let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(object, toFile: path)
     if !isSuccessfulSave {

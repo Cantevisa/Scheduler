@@ -51,10 +51,6 @@ class SettingsViewController: UIViewController {
             minutesLabel.text = "minutes"
         }
     }
-    
-    func loadSettings() -> Settings? {
-        return NSKeyedUnarchiver.unarchiveObjectWithFile(Settings.ArchiveURL.path!) as? Settings
-    }
 
     // MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

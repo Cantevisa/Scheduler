@@ -484,7 +484,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GeneratedTableViewCell" rowHeight="66" id="37h-io-X6N" customClass="TaskTableViewCell" customModule="Scheduler" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="66"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="37h-io-X6N" id="JMk-1o-bMR">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>
@@ -619,7 +619,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DoneIcon" translatesAutoresizingMaskIntoConstraints="NO" id="yEr-yd-zFw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="DoneIcon" translatesAutoresizingMaskIntoConstraints="NO" id="yEr-yd-zFw">
                                 <rect key="frame" x="214" y="61" width="173" height="173"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="173" id="C7o-AH-PUO"/>
@@ -627,20 +627,22 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You're Done!!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dj2-sV-vYj">
-                                <rect key="frame" x="180" y="276" width="241" height="48"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="40"/>
+                                <rect key="frame" x="150" y="271" width="301" height="59"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="50"/>
                                 <color key="textColor" red="0.45600000000000002" green="0.44621710799999997" blue="0.44215712810000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJL-kz-0P9">
-                                <rect key="frame" x="261" y="365" width="79" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJL-kz-0P9">
+                                <rect key="frame" x="249" y="371" width="104" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Back Home"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="presentation" id="bkH-lz-cbJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bR-Fq-uSz">
-                                <rect key="frame" x="268" y="423" width="64" height="30"/>
+                                <rect key="frame" x="259" y="429" width="83" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Statistics"/>
                                 <connections>
                                     <segue destination="CeU-eY-m63" kind="presentation" id="2VE-AK-1jl"/>
@@ -786,8 +788,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="bYo-fs-8IH"/>
         <segue reference="bkH-lz-cbJ"/>
+        <segue reference="2VE-AK-1jl"/>
         <segue reference="jwa-oK-npT"/>
-        <segue reference="hQn-Dc-4ML"/>
         <segue reference="zWN-Qs-2wb"/>
     </inferredMetricsTieBreakers>
 </document>

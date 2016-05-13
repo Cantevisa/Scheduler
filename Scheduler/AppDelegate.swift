@@ -17,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // empty list of saved tasks when the app opens
         let emptyList = [Task]()
         NSKeyedArchiver.archiveRootObject(emptyList, toFile: Task.ArchiveURL.path!)
+        if let savedSettings = loadSettings() {
+            SettingsViewController.CurrentSettings.currentSettings = savedSettings
+        }
         return true
     }
 
