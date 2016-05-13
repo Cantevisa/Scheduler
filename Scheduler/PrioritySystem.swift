@@ -62,7 +62,7 @@ class PrioritySystem: UIView {
         updateButtonSelectionStates()
     }
     
-    private func updateButtonSelectionStates() {
+    func updateButtonSelectionStates() {
         for (index, button) in priorityButtons.enumerate() {
             if index == 3 - priority {
                 button.selected = true

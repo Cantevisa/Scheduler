@@ -27,6 +27,7 @@ class NewTaskViewController: UIViewController, UITextFieldDelegate {
             navigationItem.title = task.name
             nameTextField.text = task.name
             prioritySystem.priority = task.priority
+            prioritySystem.updateButtonSelectionStates()
             timeSelector.countDownDuration = Double(task.time)
         }
         // Do any additional setup after loading the view, typically from a nib.
