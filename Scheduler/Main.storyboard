@@ -166,51 +166,69 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="ge5-S2-JPH">
-                                <rect key="frame" x="202" y="270" width="115" height="31"/>
+                                <rect key="frame" x="202" y="192" width="115" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="UKK-5c-jrE"/>
                                 </constraints>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preferred Break Length" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7M-4B-2zv">
-                                <rect key="frame" x="211" y="241" width="178" height="21"/>
+                                <rect key="frame" x="214" y="163" width="178" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jE9-Zc-byT">
-                                <rect key="frame" x="323" y="276" width="16" height="18"/>
+                                <rect key="frame" x="323" y="198" width="16" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="335-BH-ccP">
-                                <rect key="frame" x="360" y="392" width="51" height="31"/>
+                                <rect key="frame" x="360" y="314" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longer Tasks First?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfF-Tq-Sx4">
-                                <rect key="frame" x="186" y="397" width="148" height="21"/>
+                                <rect key="frame" x="186" y="319" width="148" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BK-MW-YHe">
-                                <rect key="frame" x="342" y="276" width="55" height="18"/>
+                                <rect key="frame" x="342" y="198" width="55" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Priority" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIS-mD-Gjr">
+                                <rect key="frame" x="243" y="437" width="115" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D6R-gH-LqQ" customClass="PrioritySystem" customModule="Scheduler" customModuleProvider="target">
+                                <rect key="frame" x="224" y="461" width="152" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="152" id="GH9-YO-rVT"/>
+                                    <constraint firstAttribute="height" constant="44" id="qSY-fh-QFE"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="lIS-mD-Gjr" firstAttribute="top" secondItem="RfF-Tq-Sx4" secondAttribute="bottom" constant="97" id="3il-R5-m5j"/>
+                            <constraint firstItem="D6R-gH-LqQ" firstAttribute="centerX" secondItem="qhv-oX-1sM" secondAttribute="centerX" id="8GJ-bi-8g8"/>
                             <constraint firstItem="jE9-Zc-byT" firstAttribute="centerY" secondItem="ge5-S2-JPH" secondAttribute="centerY" id="Au7-Yv-b1C"/>
                             <constraint firstItem="ge5-S2-JPH" firstAttribute="top" secondItem="o7M-4B-2zv" secondAttribute="bottom" constant="8" id="Grd-t2-WGl"/>
                             <constraint firstItem="RfF-Tq-Sx4" firstAttribute="centerX" secondItem="ge5-S2-JPH" secondAttribute="centerX" id="Hd2-Qg-6mM"/>
-                            <constraint firstItem="o7M-4B-2zv" firstAttribute="top" secondItem="gNI-Ij-WfS" secondAttribute="bottom" constant="177" id="Kzh-14-WX0"/>
+                            <constraint firstItem="o7M-4B-2zv" firstAttribute="top" secondItem="gNI-Ij-WfS" secondAttribute="bottom" constant="99" id="Kzh-14-WX0"/>
                             <constraint firstItem="jE9-Zc-byT" firstAttribute="leading" secondItem="ge5-S2-JPH" secondAttribute="trailing" constant="8" id="NaC-b9-ry0"/>
                             <constraint firstItem="335-BH-ccP" firstAttribute="top" secondItem="ge5-S2-JPH" secondAttribute="bottom" constant="92" id="Qam-81-KeO"/>
                             <constraint firstItem="335-BH-ccP" firstAttribute="leading" secondItem="RfF-Tq-Sx4" secondAttribute="trailing" constant="26" id="cWc-Sq-TQ0"/>
                             <constraint firstItem="RfF-Tq-Sx4" firstAttribute="top" secondItem="ge5-S2-JPH" secondAttribute="bottom" constant="97" id="eKJ-Z3-paL"/>
-                            <constraint firstItem="o7M-4B-2zv" firstAttribute="centerX" secondItem="qhv-oX-1sM" secondAttribute="centerX" id="ffj-yb-LR0"/>
+                            <constraint firstItem="o7M-4B-2zv" firstAttribute="centerX" secondItem="qhv-oX-1sM" secondAttribute="centerX" constant="3" id="ffj-yb-LR0"/>
+                            <constraint firstItem="D6R-gH-LqQ" firstAttribute="top" secondItem="lIS-mD-Gjr" secondAttribute="bottom" constant="3" id="okV-RY-xp5"/>
                             <constraint firstItem="9BK-MW-YHe" firstAttribute="leading" secondItem="jE9-Zc-byT" secondAttribute="trailing" constant="3" id="rOi-IO-rXw"/>
+                            <constraint firstItem="lIS-mD-Gjr" firstAttribute="centerX" secondItem="qhv-oX-1sM" secondAttribute="centerX" id="vJu-3j-7xS"/>
                             <constraint firstItem="ge5-S2-JPH" firstAttribute="centerX" secondItem="qhv-oX-1sM" secondAttribute="centerX" constant="-40.5" id="zUQ-GZ-Sg7"/>
                             <constraint firstItem="9BK-MW-YHe" firstAttribute="centerY" secondItem="jE9-Zc-byT" secondAttribute="centerY" id="zgr-mv-5Ey"/>
                         </constraints>
@@ -224,6 +242,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="breakTimeSlider" destination="ge5-S2-JPH" id="IqO-S5-WQ8"/>
+                        <outlet property="defaultPrioritySelector" destination="D6R-gH-LqQ" id="p5y-bW-WgZ"/>
                         <outlet property="longerTasksSwitch" destination="335-BH-ccP" id="17G-gl-YFK"/>
                         <outlet property="minutesLabel" destination="9BK-MW-YHe" id="CrB-ct-pBx"/>
                         <outlet property="timeLabel" destination="jE9-Zc-byT" id="PAi-29-HSP"/>
@@ -484,7 +503,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GeneratedTableViewCell" rowHeight="66" id="37h-io-X6N" customClass="TaskTableViewCell" customModule="Scheduler" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="66"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="37h-io-X6N" id="JMk-1o-bMR">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>
@@ -786,10 +805,10 @@
         <image name="StatsIcon" width="210" height="210"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="5p4-pU-7SO"/>
+        <segue reference="hQn-Dc-4ML"/>
         <segue reference="bYo-fs-8IH"/>
-        <segue reference="bkH-lz-cbJ"/>
-        <segue reference="2VE-AK-1jl"/>
-        <segue reference="jwa-oK-npT"/>
         <segue reference="zWN-Qs-2wb"/>
+        <segue reference="4e3-KK-j3d"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,10 +15,11 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var minutesLabel: UILabel!
     @IBOutlet weak var longerTasksSwitch: UISwitch!
+    @IBOutlet weak var defaultPrioritySelector: PrioritySystem!
     
     //MARK: Global Properties
     struct CurrentSettings {
-        static var currentSettings: Settings = Settings(breakTime: 10, longestFirst: false)!
+        static var currentSettings: Settings = Settings(breakTime: 10, longestFirst: false, defaultPriority: 1)!
     }
     
     //MARK: - Default Overrides
@@ -28,6 +29,8 @@ class SettingsViewController: UIViewController {
             CurrentSettings.currentSettings = savedSettings
             breakTimeSlider.setValue(Float(savedSettings.breakTime), animated: false)
             longerTasksSwitch.setOn(savedSettings.longestFirst, animated: false)
+            defaultPrioritySelector.priority = savedSettings.defaultPriority
+            defaultPrioritySelector.updateButtonSelectionStates()
         }
         timeLabel.text = String(Int(breakTimeSlider.value))
         NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: #selector(SettingsViewController.updateSettings), userInfo: nil, repeats: true)
@@ -44,6 +47,7 @@ class SettingsViewController: UIViewController {
     func updateSettings() {
         CurrentSettings.currentSettings.breakTime = Int(breakTimeSlider.value)
         CurrentSettings.currentSettings.longestFirst = longerTasksSwitch.on
+        CurrentSettings.currentSettings.defaultPriority = defaultPrioritySelector.priority
         timeLabel.text = String(Int(breakTimeSlider.value))
         if breakTimeSlider.value == 1.0 {
             minutesLabel.text = "minute"
