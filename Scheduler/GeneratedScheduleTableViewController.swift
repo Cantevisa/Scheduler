@@ -40,7 +40,7 @@ class GeneratedScheduleTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -102,7 +102,6 @@ class GeneratedScheduleTableViewController: UITableViewController {
         let taskToMove: Task = tasks![fromIndexPath.row]
         tasks!.removeAtIndex(fromIndexPath.row)
         tasks!.insert(taskToMove, atIndex: toIndexPath.row)
-        saveObject(tasks!, path: Task.ArchiveURL.path!)
     }
     
     override func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -124,19 +123,14 @@ class GeneratedScheduleTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var totalTaskTime: Double = 0.0
-        for task in tasks! {
-            print("\(task.name)")
-            totalTaskTime += Double(task.time)
+        if segue.identifier != "back" {
+            var totalTaskTime: Double = 0.0
+            for task in tasks! {
+                print("\(task.name)")
+                totalTaskTime += Double(task.time)
+            }
+            saveObject(tasks!, path: Task.ArchiveURL.path!)
         }
-        saveObject(tasks!, path: Task.ArchiveURL.path!)
-        let localNotification = UILocalNotification()
-        localNotification.fireDate = NSDate(timeIntervalSinceNow: totalTaskTime)
-        localNotification.alertBody = "Your time is up!"
-        localNotification.timeZone = NSTimeZone.defaultTimeZone()
-        
-        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-        print("NOTIFICATION SET!!! Will go off in \(secondsToHoursAndMinutes(Int(totalTaskTime)))")
     }
     
     //MARK: - Generation
@@ -169,6 +163,5 @@ class GeneratedScheduleTableViewController: UITableViewController {
                 }
             }
         }
-        saveObject(tasks!, path: Task.ArchiveURL.path!)
     }
 }

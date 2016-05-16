@@ -18,6 +18,7 @@ class GenerateScheduleViewController: UIViewController {
     var taskless: Bool = false
     @IBOutlet weak var warningLabel2: UILabel!
     var warningTimer: NSTimer?
+    let tasks = loadTasks()
     
     struct info {
         static var timeConstraint: Int = 0
@@ -26,7 +27,6 @@ class GenerateScheduleViewController: UIViewController {
     //MARK: - Override Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tasks = loadTasks()
         if tasks!.isEmpty {
             warningLabel.text = "Warning: You have no tasks!"
             taskless = true
@@ -57,9 +57,15 @@ class GenerateScheduleViewController: UIViewController {
         if Int(timeSelector.countDownDuration) < totalTaskTime {
             warningLabel.text = "Warning: Not enough time!"
             warningLabel2.text = "You need \(secondsToHoursAndMinutes(totalTaskTime-Int(timeSelector.countDownDuration))) more."
+            if Int(timeSelector.countDownDuration) < tasks![0].time {
+                goButton.enabled = false
+            } else {
+                goButton.enabled = true
+            }
         } else {
             warningLabel.text = ""
             warningLabel2.text = ""
+            goButton.enabled = true
             if taskless {
                 warningLabel.text = "Warning: You have no tasks!"
                 goButton.enabled = false
