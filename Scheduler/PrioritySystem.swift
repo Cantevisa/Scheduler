@@ -11,7 +11,7 @@ import UIKit
 class PrioritySystem: UIView {
     
     //MARK: Properties
-    var priority: Int = 1 {
+    var priority: Int = SettingsViewController.CurrentSettings.currentSettings.defaultPriority {
         didSet {
             setNeedsLayout()
         }
