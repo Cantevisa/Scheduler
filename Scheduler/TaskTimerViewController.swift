@@ -94,16 +94,13 @@ class TaskTimerViewController: UIViewController {
             let newStats = Statistics(differences: differences)
             saveObject(newStats!, path: Statistics.ArchiveURL.path!)
             print ("Saving stats with averageDifference of \(loadStats()!.averageDifference)")
-            self.navigationController!.performSegueWithIdentifier("done", sender: sender)
+            self.performSegueWithIdentifier("done", sender: sender)
         }
     }
     
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    }
-    */
-
+     @IBAction func cancelTimer(sender: UIBarButtonItem) {
+        navigationController?.popViewControllerAnimated(true)
+     }
 }

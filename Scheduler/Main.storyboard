@@ -71,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCy-oV-q6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-42" y="-703"/>
+            <point key="canvasLocation" x="434" y="-925"/>
         </scene>
         <!--Start Menu-->
         <scene sceneID="tne-QT-ifu">
@@ -388,6 +388,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Tasks" id="sVX-Pj-fLh">
+                        <barButtonItem key="backBarButtonItem" title="Task List" id="Twt-sp-jKm"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CW1-xo-G4R">
                             <connections>
                                 <segue destination="u1S-kK-cwR" kind="show" identifier="AddItem" id="Icz-3V-mb3"/>
@@ -397,7 +398,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XbK-ad-dx1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1442" y="-587"/>
+            <point key="canvasLocation" x="1666" y="709"/>
         </scene>
         <!--Generate Schedule-->
         <scene sceneID="dcS-cr-9Tz">
@@ -472,7 +473,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ciM-C4-KzZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1894" y="-703"/>
+            <point key="canvasLocation" x="2435" y="-49"/>
         </scene>
         <!--Generated Schedule-->
         <scene sceneID="Tb5-F2-aIg">
@@ -489,7 +490,7 @@
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="DSq-8u-8Sk"/>
                                 <barButtonItem title="Start" id="ckk-wv-8uU">
                                     <connections>
-                                        <segue destination="UbZ-hg-HNB" kind="presentation" id="wAv-PZ-cdG"/>
+                                        <segue destination="8fg-m6-Slg" kind="show" id="vDp-bF-Xwp"/>
                                     </connections>
                                 </barButtonItem>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="jJs-Jj-LS7"/>
@@ -532,9 +533,7 @@
                             <outlet property="delegate" destination="DkZ-ip-gSv" id="Ttd-Ol-5ds"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Custom Schedule" id="w8E-dV-BfE">
-                        <barButtonItem key="backBarButtonItem" title="Time Constraints" id="ZgW-gc-YdR"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Custom Schedule" id="w8E-dV-BfE"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OIa-T9-mN4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -599,22 +598,19 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Task Timer" id="Wu8-Vo-cgj">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="l18-ON-WN6">
-                            <connections>
-                                <segue destination="DkZ-ip-gSv" kind="presentation" id="yWW-s6-rhN"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Nqm-yd-BdW"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="iconView" destination="8w8-z7-2m3" id="czn-0l-leN"/>
                         <outlet property="taskLabel" destination="Boa-vc-ul4" id="X6z-4I-wqi"/>
                         <outlet property="timerLabel" destination="C5t-PN-0Zw" id="zF0-9T-bjK"/>
+                        <segue destination="R8g-2F-eVe" kind="presentation" identifier="done" id="LSV-gJ-diF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZBG-JD-evZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2457" y="-833"/>
+            <point key="canvasLocation" x="2194" y="-1859"/>
         </scene>
         <!--Completed-->
         <scene sceneID="f1g-YR-A7U">
@@ -673,7 +669,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1oz-YS-Rnv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1176" y="690"/>
+            <point key="canvasLocation" x="3112" y="489"/>
         </scene>
         <!--NewTaskNavVC-->
         <scene sceneID="A86-k6-NSE">
@@ -691,7 +687,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oYW-GE-dTL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="630" y="-1545"/>
+            <point key="canvasLocation" x="-498" y="-1937"/>
         </scene>
         <!--TaskListNavVC-->
         <scene sceneID="jBA-U4-y1S">
@@ -709,7 +705,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="coW-FC-gAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1466" y="-633"/>
+            <point key="canvasLocation" x="-498" y="-1223"/>
         </scene>
         <!--SettingsNavVC-->
         <scene sceneID="kq6-am-vlS">
@@ -729,25 +725,6 @@
             </objects>
             <point key="canvasLocation" x="-244" y="318"/>
         </scene>
-        <!--TaskTimerNavVC-->
-        <scene sceneID="po9-hB-yie">
-            <objects>
-                <navigationController title="TaskTimerNavVC" automaticallyAdjustsScrollViewInsets="NO" id="UbZ-hg-HNB" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vCV-Pr-o9N">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="8fg-m6-Slg" kind="relationship" relationship="rootViewController" id="YEC-Ow-ZJa"/>
-                        <segue destination="R8g-2F-eVe" kind="presentation" identifier="done" id="Z43-7V-JME"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fgg-lG-75D" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2955" y="-1301"/>
-        </scene>
         <!--StatsNavVC-->
         <scene sceneID="NkK-mt-dkN">
             <objects>
@@ -764,7 +741,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UuL-U7-4il" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-636" y="-1158"/>
+            <point key="canvasLocation" x="-814" y="-306"/>
         </scene>
     </scenes>
     <resources>
@@ -774,9 +751,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="oI1-mz-YuO"/>
-        <segue reference="yWW-s6-rhN"/>
-        <segue reference="bkH-lz-cbJ"/>
+        <segue reference="kUb-n2-9j3"/>
+        <segue reference="Icz-3V-mb3"/>
         <segue reference="2VE-AK-1jl"/>
-        <segue reference="zWN-Qs-2wb"/>
     </inferredMetricsTieBreakers>
 </document>
