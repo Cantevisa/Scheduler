@@ -638,8 +638,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="DoneIcon" translatesAutoresizingMaskIntoConstraints="NO" id="yEr-yd-zFw">
-                                <rect key="frame" x="214" y="61" width="173" height="173"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DoneIcon" translatesAutoresizingMaskIntoConstraints="NO" id="yEr-yd-zFw">
+                                <rect key="frame" x="214" y="56" width="173" height="173"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="173" id="C7o-AH-PUO"/>
                                     <constraint firstAttribute="width" secondItem="yEr-yd-zFw" secondAttribute="height" multiplier="1:1" id="XM0-zg-eLH"/>
@@ -651,8 +651,8 @@
                                 <color key="textColor" red="0.45600000000000002" green="0.44621710799999997" blue="0.44215712810000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJL-kz-0P9">
-                                <rect key="frame" x="249" y="371" width="104" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJL-kz-0P9">
+                                <rect key="frame" x="248" y="371" width="104" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Back Home"/>
                                 <connections>
@@ -805,9 +805,9 @@
         <image name="StatsIcon" width="210" height="210"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5p4-pU-7SO"/>
-        <segue reference="hQn-Dc-4ML"/>
         <segue reference="bYo-fs-8IH"/>
+        <segue reference="2VE-AK-1jl"/>
+        <segue reference="bkH-lz-cbJ"/>
         <segue reference="zWN-Qs-2wb"/>
         <segue reference="4e3-KK-j3d"/>
     </inferredMetricsTieBreakers>
