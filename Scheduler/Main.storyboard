@@ -552,7 +552,9 @@
                             <outlet property="delegate" destination="DkZ-ip-gSv" id="Ttd-Ol-5ds"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Custom Schedule" id="w8E-dV-BfE"/>
+                    <navigationItem key="navigationItem" title="Custom Schedule" id="w8E-dV-BfE">
+                        <barButtonItem key="backBarButtonItem" title="Schedule" id="Cka-WT-q2C"/>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OIa-T9-mN4" userLabel="First Responder" sceneMemberID="firstResponder"/>
