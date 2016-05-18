@@ -472,11 +472,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Generate Schedule" id="Oqx-l9-5HV">
-                        <barButtonItem key="leftBarButtonItem" id="TrS-sI-Vr6">
-                            <connections>
-                                <segue destination="atb-iN-fur" kind="show" id="oI1-mz-YuO"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Go" id="oq4-wK-UFP">
                             <connections>
                                 <segue destination="DkZ-ip-gSv" kind="show" id="jrm-Hl-CCu"/>
@@ -772,9 +767,9 @@
         <image name="StatsIcon" width="210" height="210"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kUb-n2-9j3"/>
-        <segue reference="oI1-mz-YuO"/>
         <segue reference="2VE-AK-1jl"/>
+        <segue reference="jwa-oK-npT"/>
+        <segue reference="kUb-n2-9j3"/>
         <segue reference="Icz-3V-mb3"/>
     </inferredMetricsTieBreakers>
 </document>
