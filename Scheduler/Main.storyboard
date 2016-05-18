@@ -407,13 +407,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Tasks" id="sVX-Pj-fLh">
-                        <barButtonItem key="backBarButtonItem" title="Task List" id="Twt-sp-jKm"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CW1-xo-G4R">
                             <connections>
                                 <segue destination="u1S-kK-cwR" kind="show" identifier="AddItem" id="Icz-3V-mb3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XbK-ad-dx1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
