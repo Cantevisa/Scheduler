@@ -16,6 +16,7 @@ class StartViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("anything")
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,5 +27,6 @@ class StartViewController: UIViewController {
     @IBAction func activateManualMode(sender: UIButton) {
         States.manual = true
     }
+    
 }
 
