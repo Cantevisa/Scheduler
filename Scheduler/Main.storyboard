@@ -131,18 +131,27 @@
                                     <segue destination="CeU-eY-m63" kind="presentation" id="hQn-Dc-4ML"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyC-US-7EX">
+                                <rect key="frame" x="278" y="502" width="45" height="45"/>
+                                <state key="normal" title="Button" image="QuestionIcon"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="RrS-zW-AGM" firstAttribute="height" secondItem="7O7-37-i7b" secondAttribute="height" id="7Ve-qS-tQS"/>
+                            <constraint firstItem="kyC-US-7EX" firstAttribute="top" secondItem="RrS-zW-AGM" secondAttribute="bottom" constant="15" id="EX5-7Z-JWz"/>
                             <constraint firstItem="RrS-zW-AGM" firstAttribute="width" secondItem="7O7-37-i7b" secondAttribute="height" multiplier="1:1" id="Fvk-0p-BWu"/>
                             <constraint firstItem="5b8-89-KV2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="142" id="MEp-MS-qlm"/>
+                            <constraint firstItem="kyC-US-7EX" firstAttribute="centerX" secondItem="RrS-zW-AGM" secondAttribute="centerX" id="MXP-EA-sGV"/>
                             <constraint firstItem="KCU-jb-pyb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="283" id="QUK-hc-1r6"/>
                             <constraint firstItem="RrS-zW-AGM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T25-Ek-Ig6"/>
+                            <constraint firstItem="kyC-US-7EX" firstAttribute="width" secondItem="RrS-zW-AGM" secondAttribute="width" id="T8t-8O-r5n"/>
+                            <constraint firstItem="kyC-US-7EX" firstAttribute="height" secondItem="RrS-zW-AGM" secondAttribute="height" id="Xu8-xR-gPD"/>
                             <constraint firstItem="7O7-37-i7b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bYY-SQ-oWS"/>
                             <constraint firstItem="7O7-37-i7b" firstAttribute="top" secondItem="KCU-jb-pyb" secondAttribute="bottom" constant="43" id="eN4-AG-GwF"/>
                             <constraint firstItem="5b8-89-KV2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fjO-0P-rZ5"/>
                             <constraint firstItem="8Qi-6Z-upT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="242" id="jLH-rH-2jD"/>
+                            <constraint firstItem="kyC-US-7EX" firstAttribute="width" secondItem="RrS-zW-AGM" secondAttribute="height" multiplier="1:1" id="p52-Gm-NXR"/>
                             <constraint firstItem="8Qi-6Z-upT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rPb-2n-GMD"/>
                             <constraint firstItem="RrS-zW-AGM" firstAttribute="top" secondItem="7O7-37-i7b" secondAttribute="bottom" constant="15" id="v1F-ei-9rO"/>
                             <constraint firstItem="KCU-jb-pyb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w6C-hx-Rq2"/>
@@ -250,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3lL-Pe-hN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1625" y="-238"/>
+            <point key="canvasLocation" x="-2347" y="-348"/>
         </scene>
         <!--New Task-->
         <scene sceneID="JIv-DC-8oB">
@@ -745,7 +754,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2YZ-6n-9ua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1608" y="-238"/>
+            <point key="canvasLocation" x="-2330" y="-348"/>
         </scene>
         <!--StatsNavVC-->
         <scene sceneID="NkK-mt-dkN">
@@ -768,14 +777,15 @@
     </scenes>
     <resources>
         <image name="DoneIcon" width="255" height="255"/>
+        <image name="QuestionIcon" width="295" height="295"/>
         <image name="SettingsButton" width="152" height="153"/>
         <image name="StatsIcon" width="210" height="210"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Icz-3V-mb3"/>
-        <segue reference="4e3-KK-j3d"/>
-        <segue reference="kUb-n2-9j3"/>
-        <segue reference="AYm-v0-tmL"/>
+        <segue reference="6sp-h1-EPa"/>
+        <segue reference="5p4-pU-7SO"/>
         <segue reference="hQn-Dc-4ML"/>
+        <segue reference="AYm-v0-tmL"/>
     </inferredMetricsTieBreakers>
 </document>
