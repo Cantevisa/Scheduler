@@ -16,7 +16,8 @@ class TaskTableViewController: UITableViewController {
     let medPImage = UIImage(named: "PressedMedPriority")!
     let lowPImage = UIImage(named: "PressedLowPriority")!
     let breakImage = UIImage(named: "BreakIcon")!
-
+    @IBOutlet weak var generateButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +29,10 @@ class TaskTableViewController: UITableViewController {
         // load if saved
         if let savedTasks = loadTasks() {
             tasks += savedTasks
+        }
+        
+        if StartViewController.States.manual {
+            generateButton.title = "Start"
         }
     }
 
@@ -126,6 +131,14 @@ class TaskTableViewController: UITableViewController {
         }
     }
     
+    @IBAction func proceed(sender: UIBarButtonItem) {
+        if StartViewController.States.manual {
+            self.performSegueWithIdentifier("manualProceed", sender: sender)
+        } else {
+            self.performSegueWithIdentifier("autoProceed", sender: sender)
+        }
+    }
+    
     @IBAction func unwindToTaskList(sender: UIStoryboardSegue) {
         // if getting this command from the new task view controller
         if let sourceViewController = sender.sourceViewController as? NewTaskViewController, task = sourceViewController.task {
@@ -145,8 +158,4 @@ class TaskTableViewController: UITableViewController {
         // save the tasks
         saveObject(tasks, path: Task.ArchiveURL.path!)
     }
-
-    //MARK: NSCoding
-    
-    
 }

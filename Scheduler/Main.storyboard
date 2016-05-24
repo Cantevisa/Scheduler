@@ -71,12 +71,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCy-oV-q6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="434" y="-925"/>
+            <point key="canvasLocation" x="-2346" y="-1037"/>
         </scene>
         <!--Start Menu-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Start Menu" id="BYZ-38-t0r" customClass="StartViewController" sceneMemberID="viewController">
+                <viewController title="Start Menu" id="BYZ-38-t0r" customClass="StartViewController" customModule="Scheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -91,12 +91,12 @@
                                 <color key="textColor" red="0.090196078431372548" green="0.32941176470588235" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Qi-6Z-upT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Qi-6Z-upT">
                                 <rect key="frame" x="269" y="262" width="62" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Manual"/>
                                 <connections>
-                                    <action selector="activateManualMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="POv-dK-0QD"/>
+                                    <action selector="activateManualMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9ou-YE-ftW"/>
                                     <segue destination="atb-iN-fur" kind="presentation" id="jwa-oK-npT"/>
                                 </connections>
                             </button>
@@ -131,18 +131,27 @@
                                     <segue destination="CeU-eY-m63" kind="presentation" id="hQn-Dc-4ML"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyC-US-7EX">
+                                <rect key="frame" x="278" y="502" width="45" height="45"/>
+                                <state key="normal" title="Button" image="QuestionIcon"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="RrS-zW-AGM" firstAttribute="height" secondItem="7O7-37-i7b" secondAttribute="height" id="7Ve-qS-tQS"/>
+                            <constraint firstItem="kyC-US-7EX" firstAttribute="top" secondItem="RrS-zW-AGM" secondAttribute="bottom" constant="15" id="EX5-7Z-JWz"/>
                             <constraint firstItem="RrS-zW-AGM" firstAttribute="width" secondItem="7O7-37-i7b" secondAttribute="height" multiplier="1:1" id="Fvk-0p-BWu"/>
                             <constraint firstItem="5b8-89-KV2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="142" id="MEp-MS-qlm"/>
+                            <constraint firstItem="kyC-US-7EX" firstAttribute="centerX" secondItem="RrS-zW-AGM" secondAttribute="centerX" id="MXP-EA-sGV"/>
                             <constraint firstItem="KCU-jb-pyb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="283" id="QUK-hc-1r6"/>
                             <constraint firstItem="RrS-zW-AGM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T25-Ek-Ig6"/>
+                            <constraint firstItem="kyC-US-7EX" firstAttribute="width" secondItem="RrS-zW-AGM" secondAttribute="width" id="T8t-8O-r5n"/>
+                            <constraint firstItem="kyC-US-7EX" firstAttribute="height" secondItem="RrS-zW-AGM" secondAttribute="height" id="Xu8-xR-gPD"/>
                             <constraint firstItem="7O7-37-i7b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bYY-SQ-oWS"/>
                             <constraint firstItem="7O7-37-i7b" firstAttribute="top" secondItem="KCU-jb-pyb" secondAttribute="bottom" constant="43" id="eN4-AG-GwF"/>
                             <constraint firstItem="5b8-89-KV2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fjO-0P-rZ5"/>
                             <constraint firstItem="8Qi-6Z-upT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="242" id="jLH-rH-2jD"/>
+                            <constraint firstItem="kyC-US-7EX" firstAttribute="width" secondItem="RrS-zW-AGM" secondAttribute="height" multiplier="1:1" id="p52-Gm-NXR"/>
                             <constraint firstItem="8Qi-6Z-upT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rPb-2n-GMD"/>
                             <constraint firstItem="RrS-zW-AGM" firstAttribute="top" secondItem="7O7-37-i7b" secondAttribute="bottom" constant="15" id="v1F-ei-9rO"/>
                             <constraint firstItem="KCU-jb-pyb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w6C-hx-Rq2"/>
@@ -151,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="900" y="-317"/>
+            <point key="canvasLocation" x="-1625" y="-1037"/>
         </scene>
         <!--Settings-->
         <scene sceneID="MGf-Ow-Wmd">
@@ -250,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3lL-Pe-hN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-286" y="370"/>
+            <point key="canvasLocation" x="-2347" y="-348"/>
         </scene>
         <!--New Task-->
         <scene sceneID="JIv-DC-8oB">
@@ -340,7 +349,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N33-hE-ACb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="nH1-Wa-uiu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="616" y="-1501"/>
+            <point key="canvasLocation" x="-778" y="-1769"/>
         </scene>
         <!--Tasks-->
         <scene sceneID="EF5-fK-ZXZ">
@@ -356,7 +365,7 @@
                             <items>
                                 <barButtonItem title="Generate Custom Schedule" id="nxG-mr-2g2">
                                     <connections>
-                                        <segue destination="U0Y-ee-hZX" kind="show" id="ETK-x1-muA"/>
+                                        <action selector="proceed:" destination="mf8-b5-tG3" id="DCl-Rx-Tg2"/>
                                     </connections>
                                 </barButtonItem>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="vxO-Uo-jYF"/>
@@ -414,10 +423,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="generateButton" destination="nxG-mr-2g2" id="xnM-KH-ekP"/>
+                        <segue destination="U0Y-ee-hZX" kind="show" identifier="autoProceed" id="iXh-9n-pEj"/>
+                        <segue destination="8fg-m6-Slg" kind="show" identifier="manualProceed" id="AYm-v0-tmL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XbK-ad-dx1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1666" y="709"/>
+            <point key="canvasLocation" x="-802" y="-1037"/>
         </scene>
         <!--Generate Schedule-->
         <scene sceneID="dcS-cr-9Tz">
@@ -488,7 +502,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ciM-C4-KzZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2435" y="-49"/>
+            <point key="canvasLocation" x="-117" y="-1037"/>
         </scene>
         <!--Generated Schedule-->
         <scene sceneID="Tb5-F2-aIg">
@@ -555,7 +569,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OIa-T9-mN4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1627" y="-1223"/>
+            <point key="canvasLocation" x="73" y="-339"/>
         </scene>
         <!--Task Timer-->
         <scene sceneID="GfM-rC-EPC">
@@ -627,7 +641,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZBG-JD-evZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2194" y="-1859"/>
+            <point key="canvasLocation" x="593" y="-1059"/>
         </scene>
         <!--Completed-->
         <scene sceneID="f1g-YR-A7U">
@@ -686,7 +700,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1oz-YS-Rnv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3112" y="489"/>
+            <point key="canvasLocation" x="1848" y="-1037"/>
         </scene>
         <!--NewTaskNavVC-->
         <scene sceneID="A86-k6-NSE">
@@ -704,7 +718,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oYW-GE-dTL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-498" y="-1937"/>
+            <point key="canvasLocation" x="-762" y="-1769"/>
         </scene>
         <!--TaskListNavVC-->
         <scene sceneID="jBA-U4-y1S">
@@ -722,7 +736,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="coW-FC-gAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-498" y="-1223"/>
+            <point key="canvasLocation" x="-778" y="-1037"/>
         </scene>
         <!--SettingsNavVC-->
         <scene sceneID="kq6-am-vlS">
@@ -740,7 +754,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2YZ-6n-9ua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-244" y="318"/>
+            <point key="canvasLocation" x="-2330" y="-348"/>
         </scene>
         <!--StatsNavVC-->
         <scene sceneID="NkK-mt-dkN">
@@ -758,18 +772,20 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UuL-U7-4il" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-814" y="-306"/>
+            <point key="canvasLocation" x="-2330" y="-1037"/>
         </scene>
     </scenes>
     <resources>
         <image name="DoneIcon" width="255" height="255"/>
+        <image name="QuestionIcon" width="295" height="295"/>
         <image name="SettingsButton" width="152" height="153"/>
         <image name="StatsIcon" width="210" height="210"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2VE-AK-1jl"/>
-        <segue reference="jwa-oK-npT"/>
-        <segue reference="kUb-n2-9j3"/>
         <segue reference="Icz-3V-mb3"/>
+        <segue reference="6sp-h1-EPa"/>
+        <segue reference="5p4-pU-7SO"/>
+        <segue reference="hQn-Dc-4ML"/>
+        <segue reference="AYm-v0-tmL"/>
     </inferredMetricsTieBreakers>
 </document>

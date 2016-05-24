@@ -26,5 +26,5 @@ class StartViewController: UIViewController {
     @IBAction func activateManualMode(sender: UIButton) {
         States.manual = true
     }
+    
 }
-
