@@ -67,6 +67,7 @@
                     <connections>
                         <outlet property="avgDiffLabel" destination="agl-Hc-SuL" id="YYM-jO-dqy"/>
                         <outlet property="coloredLabel" destination="PDm-lU-A21" id="Hz1-v9-9c4"/>
+                        <outlet property="descriptionLabel" destination="yjj-jT-oQZ" id="ert-d1-dmk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCy-oV-q6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -782,10 +783,10 @@
         <image name="StatsIcon" width="210" height="210"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Icz-3V-mb3"/>
-        <segue reference="6sp-h1-EPa"/>
-        <segue reference="5p4-pU-7SO"/>
+        <segue reference="Slu-3d-kQL"/>
         <segue reference="hQn-Dc-4ML"/>
+        <segue reference="6sp-h1-EPa"/>
         <segue reference="AYm-v0-tmL"/>
+        <segue reference="Icz-3V-mb3"/>
     </inferredMetricsTieBreakers>
 </document>
