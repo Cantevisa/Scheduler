@@ -67,6 +67,7 @@
                     <connections>
                         <outlet property="avgDiffLabel" destination="agl-Hc-SuL" id="YYM-jO-dqy"/>
                         <outlet property="coloredLabel" destination="PDm-lU-A21" id="Hz1-v9-9c4"/>
+                        <outlet property="descriptionLabel" destination="agl-Hc-SuL" id="8pe-w0-kXf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCy-oV-q6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
