@@ -61,7 +61,7 @@ class TaskTimerViewController: UIViewController {
     func updateElapsedTime(timer: NSTimer) {
         if taskTimer.isRunning {
             timerLabel.text = "\(timeAsString(abs(tasks![taskIndex].time - Int(taskTimer.elapsedTime))))"
-            if abs(tasks![taskIndex].time - Int(taskTimer.elapsedTime)) == 0 {
+            if tasks![taskIndex].time - Int(taskTimer.elapsedTime) <= 0 {
                 overtime = -1
                 timerLabel.textColor = UIColor.redColor()
             }
