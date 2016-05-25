@@ -129,8 +129,8 @@ class GeneratedScheduleTableViewController: UITableViewController {
                 print("\(task.name)")
                 totalTaskTime += Double(task.time)
             }
-            saveObject(tasks!, path: Task.ArchiveURL.path!)
         }
+        saveObject(tasks!, path: Task.ArchiveURL.path!)
     }
     
     //MARK: - Generation
