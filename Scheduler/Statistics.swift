@@ -2,7 +2,7 @@
 //  Statistics.swift
 //  Scheduler
 //
-//  Created by Samantha Cantevisa on 5.6.16.
+//  Created by Vanessa Woo on 5.6.16.
 //  Copyright © 2016 Omnicon Industries. All rights reserved.
 //
 

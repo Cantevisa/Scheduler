@@ -2,7 +2,7 @@
 //  PrioritySystem.swift
 //  Scheduler
 //
-//  Created by Samantha Cantevisa on 2.12.16.
+//  Created by Vanessa Woo on 2.12.16.
 //  Copyright © 2016 Omnicon Industries. All rights reserved.
 //
 

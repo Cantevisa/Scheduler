@@ -2,7 +2,7 @@
 //  NewTaskViewController.swift
 //  Scheduler
 //
-//  Created by Samantha Cantevisa on 3.4.16.
+//  Created by Vanessa Woo on 3.4.16.
 //  Copyright © 2016 Omnicon Industries. All rights reserved.
 //
 
