@@ -17,7 +17,7 @@ class GenerateScheduleViewController: UIViewController {
     var totalTaskTime: Int = 0
     var taskless: Bool = false
     @IBOutlet weak var warningLabel2: UILabel!
-    var warningTimer: NSTimer?
+    var warningTimer: Timer?
     let tasks = loadTasks()
     
     struct info {
@@ -34,10 +34,10 @@ class GenerateScheduleViewController: UIViewController {
         for task in tasks! {
             totalTaskTime += task.time
         }
-        timeSelector.setDate(NSDate(), animated: false)
+        timeSelector.setDate(Date(), animated: false)
         // There is a bug that makes the value changed event only occur the second time the value is changed. The following line automatically changes the value of the datepicker to 0, 5 so that the user's input is already the second time (apparently 1970 started at 16:00, and 57600 is 16 hours).
-        timeSelector.setDate(NSDate(timeIntervalSince1970: (-57600.0+Double(totalTaskTime))), animated: false)
-        warningTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(GenerateScheduleViewController.warn), userInfo: nil, repeats: true)
+        timeSelector.setDate(Date(timeIntervalSince1970: (-57600.0+Double(totalTaskTime))), animated: false)
+        warningTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(GenerateScheduleViewController.warn), userInfo: nil, repeats: true)
         // Do any additional setup after loading the view.
     }
     
@@ -46,7 +46,7 @@ class GenerateScheduleViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         if let timer = self.warningTimer {
             timer.invalidate()
         }
@@ -58,17 +58,17 @@ class GenerateScheduleViewController: UIViewController {
             warningLabel.text = "Warning: Not enough time!"
             warningLabel2.text = "You need \(secondsToHoursAndMinutes(totalTaskTime-Int(timeSelector.countDownDuration))) more."
             if Int(timeSelector.countDownDuration) < tasks![0].time {
-                goButton.enabled = false
+                goButton.isEnabled = false
             } else {
-                goButton.enabled = true
+                goButton.isEnabled = true
             }
         } else {
             warningLabel.text = ""
             warningLabel2.text = ""
-            goButton.enabled = true
+            goButton.isEnabled = true
             if taskless {
                 warningLabel.text = "Warning: You have no tasks!"
-                goButton.enabled = false
+                goButton.isEnabled = false
             }
         }
     }
@@ -78,10 +78,8 @@ class GenerateScheduleViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if goButton === sender {
-            info.timeConstraint = Int(timeSelector.countDownDuration)
-            print("Preparing for segue with time constraint of \(info.timeConstraint)")
-        }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        info.timeConstraint = Int(timeSelector.countDownDuration)
+        print("Preparing for segue with time constraint of \(info.timeConstraint)")
     }
 }

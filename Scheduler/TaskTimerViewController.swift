@@ -14,7 +14,7 @@ class TaskTimerViewController: UIViewController {
     @IBOutlet weak var taskLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     var tasks = loadTasks()
-    private var taskIndex: Int = 0
+    fileprivate var taskIndex: Int = 0
     let taskTimer: TaskTimer = TaskTimer()
     let highPImage = UIImage(named: "PressedHighPriority")!
     let medPImage = UIImage(named: "PressedMedPriority")!
@@ -46,7 +46,7 @@ class TaskTimerViewController: UIViewController {
         if let savedStats = loadStats() {
             differences = savedStats.differences
         }
-        NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: #selector(TaskTimerViewController.updateElapsedTime(_:)), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(TaskTimerViewController.updateElapsedTime(_:)), userInfo: nil, repeats: true)
         taskTimer.start()
         // Do any additional setup after loading the view.
     }
@@ -58,23 +58,23 @@ class TaskTimerViewController: UIViewController {
     
     
     //MARK: Actions
-    func updateElapsedTime(timer: NSTimer) {
+    func updateElapsedTime(_ timer: Timer) {
         if taskTimer.isRunning {
             timerLabel.text = "\(timeAsString(abs(tasks![taskIndex].time - Int(taskTimer.elapsedTime))))"
             if tasks![taskIndex].time - Int(taskTimer.elapsedTime) <= 0 {
                 overtime = -1
-                timerLabel.textColor = UIColor.redColor()
+                timerLabel.textColor = UIColor.red
             }
         } else {
             timer.invalidate()
         }
     }
     
-    @IBAction func nextTask(sender: UIButton) {
+    @IBAction func nextTask(_ sender: UIButton) {
         differences.append(overtime*(tasks![taskIndex].time - Int(taskTimer.elapsedTime)))
         taskIndex += 1
         overtime = 1
-        timerLabel.textColor = UIColor.blackColor()
+        timerLabel.textColor = UIColor.black
         if taskIndex < tasks!.count {
             taskTimer.start()
             let task = tasks![taskIndex]
@@ -92,15 +92,15 @@ class TaskTimerViewController: UIViewController {
             print("done with everything")
             taskTimer.stop()
             let newStats = Statistics(differences: differences)
-            saveObject(newStats!, path: Statistics.ArchiveURL.path!)
+            saveObject(newStats!, path: Statistics.ArchiveURL.path)
             print ("Saving stats with averageDifference of \(loadStats()!.averageDifference)")
-            self.performSegueWithIdentifier("done", sender: sender)
+            self.performSegue(withIdentifier: "done", sender: sender)
         }
     }
     
     // MARK: - Navigation
 
-     @IBAction func cancelTimer(sender: UIBarButtonItem) {
-        navigationController?.popViewControllerAnimated(true)
+     @IBAction func cancelTimer(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
      }
 }

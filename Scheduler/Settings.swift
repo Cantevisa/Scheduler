@@ -15,8 +15,8 @@ class Settings: NSObject, NSCoding {
     var longestFirst: Bool = false
     var defaultPriority: Int
     //Archiving Paths
-    static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("settings")
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("settings")
     
     //MARK: Initialization
     init?(breakTime: Int, longestFirst: Bool, defaultPriority: Int) {
@@ -34,16 +34,16 @@ class Settings: NSObject, NSCoding {
     }
     
     //MARK: NSCoding
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeInteger(breakTime, forKey: PropertyKeys.breakTimeKey)
-        aCoder.encodeBool(longestFirst, forKey: PropertyKeys.longestKey)
-        aCoder.encodeInteger(defaultPriority, forKey: PropertyKeys.defaultPriorityKey)
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(breakTime, forKey: PropertyKeys.breakTimeKey)
+        aCoder.encode(longestFirst, forKey: PropertyKeys.longestKey)
+        aCoder.encode(defaultPriority, forKey: PropertyKeys.defaultPriorityKey)
     }
 
     required convenience init?(coder aDecoder: NSCoder) {
-        let breakTime = aDecoder.decodeIntegerForKey(PropertyKeys.breakTimeKey)
-        let longestFirst = aDecoder.decodeBoolForKey(PropertyKeys.longestKey)
-        let defaultPriority = aDecoder.decodeIntegerForKey(PropertyKeys.defaultPriorityKey)
+        let breakTime = aDecoder.decodeInteger(forKey: PropertyKeys.breakTimeKey)
+        let longestFirst = aDecoder.decodeBool(forKey: PropertyKeys.longestKey)
+        let defaultPriority = aDecoder.decodeInteger(forKey: PropertyKeys.defaultPriorityKey)
         self.init(breakTime: breakTime, longestFirst: longestFirst, defaultPriority: defaultPriority)
 }
 }

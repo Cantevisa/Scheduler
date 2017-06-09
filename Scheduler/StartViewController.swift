@@ -23,8 +23,10 @@ class StartViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func activateManualMode(sender: UIButton) {
+    @IBAction func activateManualMode(_ sender: UIButton) {
         States.manual = true
     }
-    
+    @IBAction func activateAutoMode(_ sender: UIButton) {
+        States.manual = false
+    }
 }

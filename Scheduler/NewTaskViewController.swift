@@ -40,37 +40,35 @@ class NewTaskViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: - UITextFieldDelegate
-    func textFieldDidBeginEditing(textField: UITextField) {
-        saveButton.enabled = false
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        saveButton.isEnabled = false
     }
     
     func checkValidTaskName() {
         // Disable the Save button if the text field is empty.
         let text = nameTextField.text ?? ""
-        saveButton.enabled = !text.isEmpty
+        saveButton.isEnabled = !text.isEmpty
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         checkValidTaskName()
         navigationBar.title = nameTextField.text
     }
     
     //MARK: Navigation
-    @IBAction func cancel(sender: UIBarButtonItem) {
-        navigationController?.popViewControllerAnimated(true)
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if saveButton === sender {
-            let name = nameTextField.text ?? ""
-            let time = Int(timeSelector.countDownDuration)
-            let priority = prioritySystem.priority
-            task = Task(name: name, time: time, priority: priority)
-        }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let name = nameTextField.text ?? ""
+        let time = Int(timeSelector.countDownDuration)
+        let priority = prioritySystem.priority
+        task = Task(name: name, time: time, priority: priority)
     }
 }

@@ -20,7 +20,7 @@ class GeneratedScheduleTableViewController: UITableViewController {
     let breakImage = UIImage(named: "BreakIcon")!
     
     //MARK: Generation
-    func sortTasks(t1: Task, _ t2: Task) -> Bool {
+    func sortTasks(_ t1: Task, _ t2: Task) -> Bool {
         if t1.priority > t2.priority {
             return true
         } else if t1.priority == t2.priority {
@@ -40,7 +40,7 @@ class GeneratedScheduleTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,17 +50,17 @@ class GeneratedScheduleTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks!.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "GeneratedTableViewCell"
-        let cell = self.tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! TaskTableViewCell
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! TaskTableViewCell
         let task = tasks![indexPath.row]
         
         cell.taskNameLabel.text = task.name
@@ -98,18 +98,18 @@ class GeneratedScheduleTableViewController: UITableViewController {
     */
 
     // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to toIndexPath: IndexPath) {
         let taskToMove: Task = tasks![fromIndexPath.row]
-        tasks!.removeAtIndex(fromIndexPath.row)
-        tasks!.insert(taskToMove, atIndex: toIndexPath.row)
+        tasks!.remove(at: fromIndexPath.row)
+        tasks!.insert(taskToMove, at: toIndexPath.row)
     }
     
-    override func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
         return false
     }
     
-    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        return .None
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .none
     }
 
     /*
@@ -122,7 +122,7 @@ class GeneratedScheduleTableViewController: UITableViewController {
 
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier != "back" {
             var totalTaskTime: Double = 0.0
             for task in tasks! {
@@ -130,13 +130,13 @@ class GeneratedScheduleTableViewController: UITableViewController {
                 totalTaskTime += Double(task.time)
             }
         }
-        saveObject(tasks!, path: Task.ArchiveURL.path!)
+        saveObject(tasks! as NSObject, path: Task.ArchiveURL.path)
     }
     
     //MARK: - Generation
     func addBreaks() {
         let timeConstraint = GenerateScheduleViewController.info.timeConstraint
-        tasks = tasks!.sort(sortTasks)
+        tasks = tasks!.sorted(by: sortTasks)
         var totalTaskTime: Int = 0
         for task in tasks! {
             totalTaskTime += task.time
@@ -150,18 +150,19 @@ class GeneratedScheduleTableViewController: UITableViewController {
             if numBreaks >= tasks!.count {
                 numBreaks = tasks!.count - 1
             }
-            for var i = 1; i <= numBreaks; i += 1 {
+            for i in 1...numBreaks {
                 var insertIndex: Int = (i * numBreaks - 1)
                 if insertIndex == 0 {
                     insertIndex += numBreaks
                 }
                 if insertIndex < tasks!.count {
                     let newBreak = Task(name: "Break", time: breakTime, priority: 0)
-                    tasks!.insert(newBreak!, atIndex: insertIndex)
+                    tasks!.insert(newBreak!, at: insertIndex)
                 } else {
                     break
                 }
             }
         }
+        saveObject(tasks! as NSObject, path: Task.ArchiveURL.path)
     }
 }

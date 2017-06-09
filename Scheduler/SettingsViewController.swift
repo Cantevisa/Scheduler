@@ -33,7 +33,7 @@ class SettingsViewController: UIViewController {
             defaultPrioritySelector.updateButtonSelectionStates()
         }
         timeLabel.text = String(Int(breakTimeSlider.value))
-        NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: #selector(SettingsViewController.updateSettings), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(SettingsViewController.updateSettings), userInfo: nil, repeats: true)
 
         // Do any additional setup after loading the view.
     }
@@ -46,7 +46,7 @@ class SettingsViewController: UIViewController {
     //MARK: - Saving and Loading
     func updateSettings() {
         CurrentSettings.currentSettings.breakTime = Int(breakTimeSlider.value)
-        CurrentSettings.currentSettings.longestFirst = longerTasksSwitch.on
+        CurrentSettings.currentSettings.longestFirst = longerTasksSwitch.isOn
         CurrentSettings.currentSettings.defaultPriority = defaultPrioritySelector.priority
         timeLabel.text = String(Int(breakTimeSlider.value))
         if breakTimeSlider.value == 1.0 {
@@ -57,9 +57,9 @@ class SettingsViewController: UIViewController {
     }
 
     // MARK: Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "save" {
-            saveObject(CurrentSettings.currentSettings, path: Settings.ArchiveURL.path!)
+            saveObject(CurrentSettings.currentSettings, path: Settings.ArchiveURL.path)
         }
     }
 }

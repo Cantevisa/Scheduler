@@ -9,9 +9,9 @@
 import Foundation
 
 class TaskTimer {
-    private var startTime: NSDate?
+    fileprivate var startTime: Date?
     
-    var elapsedTime: NSTimeInterval {
+    var elapsedTime: TimeInterval {
         if let startTime = self.startTime {
             return -startTime.timeIntervalSinceNow
         } else {
@@ -25,7 +25,7 @@ class TaskTimer {
     }
     
     func start() {
-        startTime = NSDate()
+        startTime = Date()
     }
     
     func stop() {

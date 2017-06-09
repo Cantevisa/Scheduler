@@ -21,7 +21,7 @@ class StatisticsViewController: UIViewController {
         if let savedStats = loadStats() {
             descriptionLabel.text = "Average difference between estimated time and actual time to complete task:"
             if savedStats.averageDifference < 0 {
-                avgDiffLabel.textColor = UIColor.redColor()
+                avgDiffLabel.textColor = UIColor.red
                 avgDiffLabel.text = "-\(timeAsString(abs(savedStats.averageDifference)))"
             } else {
                 avgDiffLabel.textColor = coloredLabel.textColor
@@ -40,9 +40,9 @@ class StatisticsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func clearStats(sender: UIBarButtonItem) {
+    @IBAction func clearStats(_ sender: UIBarButtonItem) {
         let emptyList = [Statistics]()
-        saveObject(emptyList, path: Statistics.ArchiveURL.path!)
+        saveObject(emptyList as NSObject, path: Statistics.ArchiveURL.path)
         descriptionLabel.text = ""
         avgDiffLabel.text = "You have not used the app enough to have statistics."
     }

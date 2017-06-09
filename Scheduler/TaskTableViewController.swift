@@ -24,7 +24,7 @@ class TaskTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
         
         // load if saved
         if let savedTasks = loadTasks() {
@@ -48,18 +48,18 @@ class TaskTableViewController: UITableViewController {
 
     // MARK: - Table View Data Source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return tasks.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "TaskTableViewCell"
-        let cell = self.tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! TaskTableViewCell
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! TaskTableViewCell
         let task = tasks[indexPath.row]
 
         cell.taskNameLabel.text = task.name
@@ -77,51 +77,54 @@ class TaskTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
 
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             // Delete the row from the data source
-            tasks.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            saveObject(tasks, path: Task.ArchiveURL.path!)
-        } else if editingStyle == .Insert {
+            tasks.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            saveObject(tasks as NSObject, path: Task.ArchiveURL.path)
+        } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
 
     // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to toIndexPath: IndexPath) {
         let taskToMove: Task = tasks[fromIndexPath.row]
-        tasks.removeAtIndex(fromIndexPath.row)
-        tasks.insert(taskToMove, atIndex: toIndexPath.row)
-        saveObject(tasks, path: Task.ArchiveURL.path!)
+        tasks.remove(at: fromIndexPath.row)
+        tasks.insert(taskToMove, at: toIndexPath.row)
+        saveObject(tasks as NSObject, path: Task.ArchiveURL.path)
     }
-
+    
     /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return false
-    }
-    */
-
+     // Override to support conditional rearranging of the table view.
+     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+     // Return false if you do not want the item to be re-orderable.
+     return false
+     }
+     */
+    
     // MARK: Navigation
+    @IBAction func homePressed(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        saveObject(tasks, path: Task.ArchiveURL.path!)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        saveObject(tasks as NSObject, path: Task.ArchiveURL.path)
         if segue.identifier == "ShowDetail" {
             print("Editing existing task.")
-            let taskDetailViewController = segue.destinationViewController as! NewTaskViewController
+            let taskDetailViewController = segue.destination as! NewTaskViewController
             
             // Get the cell that generated this segue.
             if let selectedTaskCell = sender as? TaskTableViewCell {
-                let indexPath = tableView.indexPathForCell(selectedTaskCell)!
+                let indexPath = tableView.indexPath(for: selectedTaskCell)!
                 let selectedTask = tasks[indexPath.row]
                 taskDetailViewController.task = selectedTask
             }
@@ -131,31 +134,31 @@ class TaskTableViewController: UITableViewController {
         }
     }
     
-    @IBAction func proceed(sender: UIBarButtonItem) {
+    @IBAction func proceed(_ sender: UIBarButtonItem) {
         if StartViewController.States.manual {
-            self.performSegueWithIdentifier("manualProceed", sender: sender)
+            self.performSegue(withIdentifier: "manualProceed", sender: sender)
         } else {
-            self.performSegueWithIdentifier("autoProceed", sender: sender)
+            self.performSegue(withIdentifier: "autoProceed", sender: sender)
         }
     }
     
-    @IBAction func unwindToTaskList(sender: UIStoryboardSegue) {
+    @IBAction func unwindToTaskList(_ sender: UIStoryboardSegue) {
         // if getting this command from the new task view controller
-        if let sourceViewController = sender.sourceViewController as? NewTaskViewController, task = sourceViewController.task {
+        if let sourceViewController = sender.source as? NewTaskViewController, let task = sourceViewController.task {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 // edit existing task
                 tasks[selectedIndexPath.row] = task
                 // replace row in table
-                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
             } else {
                 // add a new task
-                let newIndexPath = NSIndexPath(forRow: tasks.count, inSection: 0)
+                let newIndexPath = IndexPath(row: tasks.count, section: 0)
                 tasks.append(task)
                 // adds new row in table
-                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+                tableView.insertRows(at: [newIndexPath], with: .bottom)
             }
         }
         // save the tasks
-        saveObject(tasks, path: Task.ArchiveURL.path!)
+        saveObject(tasks as NSObject, path: Task.ArchiveURL.path)
     }
 }

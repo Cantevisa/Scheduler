@@ -31,13 +31,13 @@ class PrioritySystem: UIView {
         self.buttonImageList = [unpressedHPImage!,unpressedMPImage!,unpressedLPImage!,pressedHPImage!,pressedMPImage!,pressedLPImage!]
         for _ in 0..<3 {
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
-            button.addTarget(self, action: #selector(PrioritySystem.priorityButtonTapped(_:)), forControlEvents: .TouchDown)
+            button.addTarget(self, action: #selector(PrioritySystem.priorityButtonTapped(_:)), for: .touchDown)
             priorityButtons.append(button)
             addSubview(button)
         }
     }
     
-    override func intrinsicContentSize() -> CGSize {
+    override var intrinsicContentSize : CGSize {
         return CGSize(width: 240, height: 44)
     }
     
@@ -46,28 +46,28 @@ class PrioritySystem: UIView {
         var buttonFrame = CGRect(x: 0, y: 0, width: buttonSize, height: buttonSize)
         
         // Offset each button's origin by the length of the button plus spacing.
-        for (index, button) in priorityButtons.enumerate() {
+        for (index, button) in priorityButtons.enumerated() {
             buttonFrame.origin.x = CGFloat(index * (buttonSize + 10))
-            button.setImage(self.buttonImageList[index], forState: .Normal)
-            button.setImage(self.buttonImageList[index+3], forState: .Selected)
-            button.setImage(self.buttonImageList[index+3], forState: [.Selected, .Highlighted])
+            button.setImage(self.buttonImageList[index], for: UIControlState())
+            button.setImage(self.buttonImageList[index+3], for: .selected)
+            button.setImage(self.buttonImageList[index+3], for: [.selected, .highlighted])
             button.adjustsImageWhenHighlighted = false
             button.frame = buttonFrame
         }
     }
     
     //MARK: - Actions
-    func priorityButtonTapped(button: UIButton) {
-        priority = (3 - priorityButtons.indexOf(button)!)
+    func priorityButtonTapped(_ button: UIButton) {
+        priority = (3 - priorityButtons.index(of: button)!)
         updateButtonSelectionStates()
     }
     
     func updateButtonSelectionStates() {
-        for (index, button) in priorityButtons.enumerate() {
+        for (index, button) in priorityButtons.enumerated() {
             if index == 3 - priority {
-                button.selected = true
+                button.isSelected = true
             } else {
-                button.selected = false
+                button.isSelected = false
             }
         }
     }

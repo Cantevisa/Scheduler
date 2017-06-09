@@ -13,8 +13,8 @@ class Statistics: NSObject, NSCoding {
     let differences: [Int]
     let averageDifference: Int
     //Archiving Paths
-    static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("statistics")
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("statistics")
     
     //MARK: - Types
     struct PropertyKey {
@@ -30,12 +30,12 @@ class Statistics: NSObject, NSCoding {
     
     
     //MARK: NSCoding
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(differences, forKey: PropertyKey.diffKey)
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(differences, forKey: PropertyKey.diffKey)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        let differences = aDecoder.decodeObjectForKey(PropertyKey.diffKey) as! [Int]
+        let differences = aDecoder.decodeObject(forKey: PropertyKey.diffKey) as! [Int]
         self.init(differences: differences)
     }
 }

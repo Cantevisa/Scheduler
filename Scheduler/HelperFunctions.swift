@@ -9,7 +9,7 @@
 import Foundation
 
 //MARK: Time Formatting
-func secondsToHoursAndMinutes (seconds : Int) -> (String) {
+func secondsToHoursAndMinutes (_ seconds : Int) -> (String) {
     let hours = seconds / 3600
     let minutes = (seconds % 3600) / 60
     if hours > 0 {
@@ -22,7 +22,7 @@ func secondsToHoursAndMinutes (seconds : Int) -> (String) {
     }
 }
 
-func timeAsString (time: Int) -> String {
+func timeAsString (_ time: Int) -> String {
     let hours = Int(time/3600)
     let minutes = Int((time-hours*3600)/60)
     let seconds = Int(time%60)
@@ -30,7 +30,7 @@ func timeAsString (time: Int) -> String {
 }
 
 //MARK: Math
-func average (array : [Int]) -> Int {
+func average (_ array : [Int]) -> Int {
     var total = 0
     for value in array {
         total += value
@@ -40,18 +40,18 @@ func average (array : [Int]) -> Int {
 
 //MARK: - NSCoding
 func loadTasks() -> [Task]? {
-    return NSKeyedUnarchiver.unarchiveObjectWithFile(Task.ArchiveURL.path!) as? [Task]
+    return NSKeyedUnarchiver.unarchiveObject(withFile: Task.ArchiveURL.path) as? [Task]
 }
 
 func loadStats() -> Statistics? {
-    return NSKeyedUnarchiver.unarchiveObjectWithFile(Statistics.ArchiveURL.path!) as? Statistics
+    return NSKeyedUnarchiver.unarchiveObject(withFile: Statistics.ArchiveURL.path) as? Statistics
 }
 
 func loadSettings() -> Settings? {
-    return NSKeyedUnarchiver.unarchiveObjectWithFile(Settings.ArchiveURL.path!) as? Settings
+    return NSKeyedUnarchiver.unarchiveObject(withFile: Settings.ArchiveURL.path) as? Settings
 }
 
-func saveObject(object: NSObject, path: String) {
+func saveObject(_ object: NSObject, path: String) {
     let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(object, toFile: path)
     if !isSuccessfulSave {
         print("Failed to save tasks.")

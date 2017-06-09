@@ -14,8 +14,8 @@ class Task: NSObject, NSCoding {
     let time: Int
     let priority: Int
     //Archiving Paths
-    static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("tasks")
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("tasks")
     
     //MARK: - Types
     struct PropertyKey {
@@ -39,16 +39,16 @@ class Task: NSObject, NSCoding {
     
     
     //MARK: NSCoding
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(name, forKey: PropertyKey.nameKey)
-        aCoder.encodeInteger(time, forKey: PropertyKey.timeKey)
-        aCoder.encodeInteger(priority, forKey: PropertyKey.priorityKey)
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(name, forKey: PropertyKey.nameKey)
+        aCoder.encode(time, forKey: PropertyKey.timeKey)
+        aCoder.encode(priority, forKey: PropertyKey.priorityKey)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        let name = aDecoder.decodeObjectForKey(PropertyKey.nameKey) as! String
-        let priority = aDecoder.decodeIntegerForKey(PropertyKey.priorityKey)
-        let time = aDecoder.decodeIntegerForKey(PropertyKey.timeKey)
+        let name = aDecoder.decodeObject(forKey: PropertyKey.nameKey) as! String
+        let priority = aDecoder.decodeInteger(forKey: PropertyKey.priorityKey)
+        let time = aDecoder.decodeInteger(forKey: PropertyKey.timeKey)
         self.init(name:name, time:time, priority:priority)
     }
 }
